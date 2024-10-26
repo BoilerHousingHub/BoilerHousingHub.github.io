@@ -47,8 +47,8 @@
                     font-size: 16px;
                 }
                 .text {
-                	padding-left: 100px;
-                	padding-right: 100px;
+                    padding-left: 100px;
+                    padding-right: 100px;
                     text-wrap: balance;
                 }
             }
@@ -67,7 +67,7 @@
                 }
 
                 .options {
-                    width: 5vw;
+                    width: auto;
                     padding: 2vw;
                     border-radius: 2vw;
                 }
@@ -84,8 +84,8 @@
                     font-size: 4vw;
                 }
                 .text {
-                	padding-left: 5vw;
-                	padding-right: 5vw;
+                    padding-left: 5vw;
+                    padding-right: 5vw;
                 }
             }
 
@@ -165,6 +165,10 @@
                 width: 100px;
                 margin-left: 10%;
             }
+            option,
+            .ranking {
+                font-family: "United Sans", sans-serif;
+            }
         </style>
     </head>
 
@@ -186,7 +190,7 @@
                     <h1 class="header">1. Category Importance</h1>
                     <p class="text">Rank these attributes based on their importance to you:</p>
 
-                    <label for="ValueRank1">Rank 1:</label>
+                    <label class="ranking" for="ValueRank1">Rank 1:</label>
                     <select name="ValueRank1" id="ValueRank1" onchange="ValueRank1()">
                         <option value="0" selected></option>
                         <option value="1" id="v11">A/C vs. No A/C</option>
@@ -197,7 +201,7 @@
                         <option value="6" id="v16">Proximity to Food</option>
                     </select>
                     <br />
-                    <label for="ValueRank2">Rank 2:</label>
+                    <label class="ranking" for="ValueRank2">Rank 2:</label>
                     <select name="ValueRank2" id="ValueRank2" onchange="ValueRank2()">
                         <option value="0" selected></option>
                         <option value="1" id="v21">A/C</option>
@@ -208,7 +212,7 @@
                         <option value="6" id="v26">Proximity to Food</option>
                     </select>
                     <br />
-                    <label for="ValueRank3">Rank 3:</label>
+                    <label class="ranking" for="ValueRank3">Rank 3:</label>
                     <select name="ValueRank3" id="ValueRank3" onchange="ValueRank3()">
                         <option value="0" selected></option>
                         <option value="1" id="v31">A/C</option>
@@ -219,7 +223,7 @@
                         <option value="6" id="v36">Proximity to Food</option>
                     </select>
                     <br />
-                    <label for="ValueRank4">Rank 4:</label>
+                    <label class="ranking" for="ValueRank4">Rank 4:</label>
                     <select name="ValueRank4" id="ValueRank4" onchange="ValueRank4()">
                         <option value="0" selected></option>
                         <option value="1" id="v41">A/C</option>
@@ -230,7 +234,7 @@
                         <option value="6" id="v46">Proximity to Food</option>
                     </select>
                     <br />
-                    <label for="ValueRank5">Rank 5:</label>
+                    <label class="ranking" for="ValueRank5">Rank 5:</label>
                     <select name="ValueRank5" id="ValueRank5" onchange="ValueRank5()">
                         <option value="0" selected></option>
                         <option value="1" id="v51">A/C</option>
@@ -241,7 +245,7 @@
                         <option value="6" id="v56">Proximity to Food</option>
                     </select>
                     <br />
-                    <label for="ValueRank6">Rank 6:</label>
+                    <label class="ranking" for="ValueRank6">Rank 6:</label>
                     <select name="ValueRank6" id="ValueRank6" onchange="ValueRank6()">
                         <option value="0" selected></option>
                         <option value="1" id="v51">A/C</option>
@@ -274,48 +278,64 @@
                     <label class="options" for="Q2-5">5</label>
 
                     <hr class="divider" />
+                </div>
 
-                    <div id="Q3" class="question">
-                        <h1 class="header">3. Opinion on a B?</h1>
-                        <p class="text">goon</p>
+                <div id="Q3" class="question">
+                    <h1 class="header">3. Biological Sex</h1>
+                    <p class="text">What is your biological sex</p>
 
-                        <label for="RoomRank1">Rank 1:</label>
-                        <select name="RoomRank1" id="RoomRank1" onchange="RoomRank1()">
-                            <option value="0" selected></option>
-                            <option value="1" id="11">Single</option>
-                            <option value="2" id="12">Double</option>
-                            <option value="3" id="13">Triple</option>
-                            <option value="4" id="14">Quad</option>
-                        </select>
-                        <br />
-                        <label for="RoomRank2">Rank 2:</label>
-                        <select name="RoomRank2" id="RoomRank2" onchange="RoomRank2()">
-                            <option value="0" selected></option>
-                            <option value="1" id="21">Single</option>
-                            <option value="2" id="22">Double</option>
-                            <option value="3" id="23">Triple</option>
-                            <option value="4" id="24">Quad</option>
-                        </select>
-                        <br />
-                        <label for="RoomRank3">Rank 3:</label>
-                        <select name="RoomRank3" id="RoomRank3" onchange="RoomRank3()">
-                            <option value="0" selected></option>
-                            <option value="1" id="31">Single</option>
-                            <option value="2" id="32">Double</option>
-                            <option value="3" id="33">Triple</option>
-                            <option value="4" id="34">Quad</option>
-                        </select>
-                        <br />
-                        <label for="RoomRank4">Rank 4:</label>
-                        <select name="RoomRank4" id="RoomRank4" onchange="RoomRank4()">
-                            <option value="0" selected></option>
-                            <option value="1" id="41">Single</option>
-                            <option value="2" id="42">Double</option>
-                            <option value="3" id="43">Triple</option>
-                            <option value="4" id="44">Quad</option>
-                        </select>
-                        <hr class="divider" />
-                    </div>
+                    <input class="radio" type="radio" id="Q3-1" name="Q3" value="1" />
+                    <label class="options" for="Q3-1">Male</label>
+
+                    <input class="radio" type="radio" id="Q3-2" name="Q3" value="2" />
+                    <label class="options" for="Q3-2">Female</label>
+
+                    <input class="radio" type="radio" id="Q3-3" name="Q3" value="3" />
+                    <label class="options" for="Q3-3">Other</label>
+
+                    <hr class="divider" />
+                </div>
+                
+                <div id="Q4" class="question">
+                   <h1 class="header">4. Opinion on a B?</h1>
+                    <p class="text">goon</p>
+
+                    <label class="ranking" for="RoomRank1">Rank 1:</label>
+                    <select name="RoomRank1" id="RoomRank1" onchange="RoomRank1()">
+                        <option value="0" selected></option>
+                        <option value="1" id="11">Single</option>
+                        <option value="2" id="12">Double</option>
+                        <option value="3" id="13">Triple</option>
+                        <option value="4" id="14">Quad</option>
+                    </select>
+                    <br />
+                    <label class="ranking" for="RoomRank2">Rank 2:</label>
+                    <select name="RoomRank2" id="RoomRank2" onchange="RoomRank2()">
+                        <option value="0" selected></option>
+                        <option value="1" id="21">Single</option>
+                        <option value="2" id="22">Double</option>
+                        <option value="3" id="23">Triple</option>
+                        <option value="4" id="24">Quad</option>
+                    </select>
+                    <br />
+                    <label class="ranking" for="RoomRank3">Rank 3:</label>
+                    <select name="RoomRank3" id="RoomRank3" onchange="RoomRank3()">
+                        <option value="0" selected></option>
+                        <option value="1" id="31">Single</option>
+                        <option value="2" id="32">Double</option>
+                        <option value="3" id="33">Triple</option>
+                        <option value="4" id="34">Quad</option>
+                    </select>
+                    <br />
+                    <label class="ranking" for="RoomRank4">Rank 4:</label>
+                    <select name="RoomRank4" id="RoomRank4" onchange="RoomRank4()">
+                        <option value="0" selected></option>
+                        <option value="1" id="41">Single</option>
+                        <option value="2" id="42">Double</option>
+                        <option value="3" id="43">Triple</option>
+                        <option value="4" id="44">Quad</option>
+                    </select>
+                    <hr class="divider" />
                 </div>
             </div>
         </div>

@@ -4,11 +4,10 @@
 <title>Purdue Housing Quiz</title>
 <style>
 body {background-color: RGB(207, 185, 145); margin: 0; padding: 0; height: 100vh;}
-#main {background-color: white; width: 80vw; height: 100vh; margin: 0; padding: 0; left: 10vw; position: absolute; top: 0;}
+#main {background-color: white; width: 100vw; max-width: 750px; height: 100vh; margin: auto; padding: 0; position: relative; top: 0; margin-top: 0;}
 
-#Q1 {background-color: grey; text-align: center;}
-#bar {background-color: black; z-index: 0;}
-.question {padding-bottom: 10px;}
+#bar {background-color: black; z-index: 100; position: fixed; top: 0; width: 100vw;}
+.question {padding: 10px; height: 140px; text-align: center;}
 
 .radio {-webkit-appearance: none; appearance: none; background-color: #fff; margin: 0;}
 .options {border-style: solid; cursor: pointer; padding: 10px; background-color: white;}
@@ -46,10 +45,28 @@ body {background-color: RGB(207, 185, 145); margin: 0; padding: 0; height: 100vh
 <label class="options"  for="Q1-5">5</label>
 </div>
 
+
+<div id="Q2" class="question">
+<h1>2. Opinion on Cason?</h1>
+
+<input class="radio" type="radio" id="Q2-1" name="Q2" value="1">
+<label class="options" for="Q2-1">1</label>
+
+<input class="radio" type="radio" id="Q2-2" name="Q2" value="2">
+<label class="options"  for="Q2-2">2</label>
+
+<input class="radio" type="radio" id="Q2-3" name="Q2" value="3">
+<label class="options"  for="Q2-3">3</label>
+
+<input class="radio" type="radio" id="Q2-4" name="Q2" value="4">
+<label class="options"  for="Q2-4">4</label>
+
+<input class="radio" type="radio" id="Q2-5" name="Q2" value="5">
+<label class="options"  for="Q2-5">5</label>
+</div>
+
 </div>
 
 </div>
 </body>
 </html>
-
-

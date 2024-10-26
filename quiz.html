@@ -3,13 +3,14 @@
     <head>
         <title>Purdue Housing Quiz</title>
         <link rel="stylesheet" id="unitedsans-css" href="https://www.purdue.edu/home/wp-content/mu-plugins/boilerup-wp/unitedsans.css?ver=6.6.2" type="text/css" media="all" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="https://boilerhousinghub.github.io/favicon.ico" />
         <style>
             body {
                 background-color: RGB(207, 185, 145);
                 margin: 0;
                 padding: 0;
                 height: 100%;
+                overflow-x: hidden;
             }
 
             #main {
@@ -169,6 +170,7 @@
             .ranking {
                 font-family: "United Sans", sans-serif;
             }
+            select {height: 6vw;}
         </style>
     </head>
 
@@ -259,46 +261,81 @@
                 </div>
 
                 <div id="Q2" class="question">
-                    <h1 class="header">2. Opinion on Ruhaan?</h1>
-                    <p class="text">goon</p>
+                    <h1 class="header">2. Biological Sex</h1>
+                    <p class="text">What is your biological sex</p>
 
-                    <input class="radio" type="radio" id="Q2-1" name="Q2" value="1" />
-                    <label class="options" for="Q2-1">1</label>
+                    <input class="radio" type="radio" id="Q2-1" name="Q2" value="Male" />
+                    <label class="options" for="Q2-1">Male</label>
 
-                    <input class="radio" type="radio" id="Q2-2" name="Q2" value="2" />
-                    <label class="options" for="Q2-2">2</label>
+                    <input class="radio" type="radio" id="Q2-2" name="Q2" value="Female" />
+                    <label class="options" for="Q2-2">Female</label>
 
-                    <input class="radio" type="radio" id="Q2-3" name="Q2" value="3" />
-                    <label class="options" for="Q2-3">3</label>
-
-                    <input class="radio" type="radio" id="Q2-4" name="Q2" value="4" />
-                    <label class="options" for="Q2-4">4</label>
-
-                    <input class="radio" type="radio" id="Q2-5" name="Q2" value="5" />
-                    <label class="options" for="Q2-5">5</label>
+                    <input class="radio" type="radio" id="Q2-3" name="Q2" value="Other" />
+                    <label class="options" for="Q2-3">Other</label>
 
                     <hr class="divider" />
                 </div>
 
                 <div id="Q3" class="question">
-                    <h1 class="header">3. Biological Sex</h1>
-                    <p class="text">What is your biological sex</p>
+                    <h1 class="header">3. Gender Inclusive</h1>
+                    <p class="text">Do you wish to be in a gender-inclusive dorm?</p>
 
                     <input class="radio" type="radio" id="Q3-1" name="Q3" value="1" />
-                    <label class="options" for="Q3-1">Male</label>
+                    <label class="options" for="Q3-1">Yes</label>
 
                     <input class="radio" type="radio" id="Q3-2" name="Q3" value="2" />
-                    <label class="options" for="Q3-2">Female</label>
+                    <label class="options" for="Q3-2">No</label>
 
-                    <input class="radio" type="radio" id="Q3-3" name="Q3" value="3" />
-                    <label class="options" for="Q3-3">Other</label>
+                    <hr class="divider" />
+                </div>
+
+                <div id="Q4" class="question">
+                    <h1 class="header">4. dunno?</h1>
+                    <p class="text">goon</p>
+
+                    <input class="radio" type="radio" id="Q4-1" name="Q4" value="1" />
+                    <label class="options" for="Q4-1">1</label>
+
+                    <input class="radio" type="radio" id="Q4-2" name="Q4" value="2" />
+                    <label class="options" for="Q4-2">2</label>
+
+                    <input class="radio" type="radio" id="Q4-3" name="Q4" value="3" />
+                    <label class="options" for="Q4-3">3</label>
+
+                    <input class="radio" type="radio" id="Q4-4" name="Q4" value="4" />
+                    <label class="options" for="Q4-4">4</label>
+
+                    <input class="radio" type="radio" id="Q4-5" name="Q4" value="5" />
+                    <label class="options" for="Q4-5">5</label>
+
+                    <hr class="divider" />
+                </div>
+
+                <div id="Q5" class="question">
+                    <h1 class="header">5. Bathroom</h1>
+                    <p class="text">Please state your preference on community style (1) vs suite style (5) bathroom</p>
+
+                    <input class="radio" type="radio" id="Q5-1" name="Q5" value="1" />
+                    <label class="options" for="Q5-1">1</label>
+
+                    <input class="radio" type="radio" id="Q5-2" name="Q5" value="2" />
+                    <label class="options" for="Q5-2">2</label>
+
+                    <input class="radio" type="radio" id="Q5-3" name="Q5" value="3" />
+                    <label class="options" for="Q5-3">3</label>
+
+                    <input class="radio" type="radio" id="Q5-4" name="Q5" value="4" />
+                    <label class="options" for="Q5-4">4</label>
+
+                    <input class="radio" type="radio" id="Q5-5" name="Q5" value="5" />
+                    <label class="options" for="Q5-5">5</label>
 
                     <hr class="divider" />
                 </div>
                 
-                <div id="Q4" class="question">
-                   <h1 class="header">4. Opinion on a B?</h1>
-                    <p class="text">goon</p>
+                <div id="Q6" class="question">
+                   <h1 class="header">6. Number of Roommates</h1>
+                    <p class="text">Please rank your preference in your ideal number of roommates</p>
 
                     <label class="ranking" for="RoomRank1">Rank 1:</label>
                     <select name="RoomRank1" id="RoomRank1" onchange="RoomRank1()">

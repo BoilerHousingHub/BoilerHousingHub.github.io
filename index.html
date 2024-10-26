@@ -2,16 +2,21 @@
 <html>
 <head>
 <title>Purdue Housing Quiz</title>
+<link rel="stylesheet" id="unitedsans-css" href="https://www.purdue.edu/home/wp-content/mu-plugins/boilerup-wp/unitedsans.css?ver=6.6.2" type="text/css" media="all">
 <style>
+
 body {background-color: RGB(207, 185, 145); margin: 0; padding: 0; height: 100vh;}
 #main {background-color: white; width: 100vw; max-width: 750px; height: 100vh; margin: auto; padding: 0; position: relative; top: 0; margin-top: 0;}
 
 #bar {background-color: black; z-index: 100; position: fixed; top: 0; width: 100vw;}
+#problems {font-size: min(5vw, 30px);}
+
 .question {padding: 10px; height: auto; text-align: center;}
-#problems {font-size: min(5vw, 30px);} 
+.header {font-family:'United Sans Condensed',sans-serif; font-weight: 900; margin: 0;}
+.text {font-family:"United Sans",sans-serif; margin-top: 0;}
 
 .radio {-webkit-appearance: none; appearance: none; background-color: #fff; margin: 0;}
-.options {border: solid; border-color: RGB(207, 185, 145); border-radius: 10px; cursor: pointer; padding: 10px; background-color: RGB(207, 185, 145);}
+.options {font-family:"United Sans",sans-serif; font-weight: bold; border: solid; border-color: RGB(207, 185, 145); border-radius: 10px; cursor: pointer; padding: 10px; background-color: RGB(207, 185, 145);}
 .radio:checked + .options {color: white; background-color: black; border-color: black;}
 
 </style>
@@ -25,7 +30,8 @@ body {background-color: RGB(207, 185, 145); margin: 0; padding: 0; height: 100vh
 <div id="problems">
 
 <div id="Q1" class="question">
-<h1>1. Opinion on Cason?</h1>
+<h1 class="header">1. Opinion on Cason?</h1>
+<p class="text">goon</p>
 
 <input class="radio" type="radio" id="Q1-1" name="Q1" value="1">
 <label class="options" for="Q1-1">1</label>
@@ -45,7 +51,8 @@ body {background-color: RGB(207, 185, 145); margin: 0; padding: 0; height: 100vh
 
 
 <div id="Q2" class="question">
-<h1>2. Opinion on Cason?</h1>
+<h1 class="header">2. Opinion on Ruhaan?</h1>
+<p class="text">goon</p>
 
 <input class="radio" type="radio" id="Q2-1" name="Q2" value="1">
 <label class="options" for="Q2-1">1</label>

@@ -1,226 +1,276 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>Purdue Housing Quiz</title>
-    <link rel="stylesheet" id="unitedsans-css"
-        href="https://www.purdue.edu/home/wp-content/mu-plugins/boilerup-wp/unitedsans.css?ver=6.6.2" type="text/css"
-        media="all" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <style>
-        body {
-            background-color: RGB(207, 185, 145);
-            margin: 0;
-            padding: 0;
-            height: 100%;
-        }
-
-        #main {
-            background-color: white;
-            width: 80vw;
-            max-width: 1000px;
-            height: 100vh;
-            margin: auto;
-            padding: 0;
-            position: relative;
-            top: 0;
-            margin-top: 0;
-        }
-
-        #problems {
-            font-size: min(5vw, 30px);
-            padding-top: 100px;
-        }
-
-        @media (min-width: 981px) {
-            .options {
-                padding: 10px;
-                border-radius: 10px;
-            }
-
-            .divider {
-                border: solid gray;
-                border-radius: 3px;
-                border-width: 3px;
-                width: 300px;
-                margin-top: 50px;
-            }
-
-            .nav-items a {
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width: 980px) {
+    <head>
+        <title>Purdue Housing Quiz</title>
+        <link rel="stylesheet" id="unitedsans-css" href="https://www.purdue.edu/home/wp-content/mu-plugins/boilerup-wp/unitedsans.css?ver=6.6.2" type="text/css" media="all" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <style>
             body {
-                background-color: white;
+                background-color: RGB(207, 185, 145);
+                margin: 0;
+                padding: 0;
+                height: 100%;
             }
-
             #main {
-                width: 100vw;
+                background-color: white;
+                width: 80vw;
+                max-width: 1000px;
+                height: 100vh;
+                margin: auto;
+                padding: 0;
+                position: relative;
+                top: 0;
+                margin-top: 0;
             }
 
             #problems {
-                font-size: min(8vw);
+                font-size: min(5vw, 30px);
+                padding-top: 100px;
             }
 
+            @media (min-width: 981px) {
+                .options {
+                    padding: 10px;
+                    border-radius: 10px;
+                }
+                .divider {
+                    border: solid gray;
+                    border-radius: 3px;
+                    border-width: 3px;
+                    width: 300px;
+                    margin-top: 50px;
+                }
+                .nav-items a {
+                    font-size: 16px;
+                }
+            }
+
+            @media (max-width: 980px) {
+                body {
+                    background-color: white;
+                }
+                #main {
+                    width: 100vw;
+                }
+                #problems {
+                    font-size: min(8vw);
+                }
+                .options {
+                    width: 5vw;
+                    padding: 2vw;
+                    border-radius: 2vw;
+                }
+                .divider {
+                    border: solid gray;
+                    border-radius: 1vw;
+                    border-width: 1vw;
+                    width: 70vw;
+                    margin-top: 10vw;
+                }
+                .nav-items a {
+                    font-size: 4vw;
+                }
+            }
+            .question {
+                padding: 10px;
+                height: auto;
+                text-align: center;
+            }
+            .header {
+                font-family: "United Sans Condensed", sans-serif;
+                font-weight: 900;
+                margin: 0;
+            }
+            .text {
+                font-family: "United Sans", sans-serif;
+                margin-top: 10px;
+            }
+
+            .radio {
+                -webkit-appearance: none;
+                appearance: none;
+                background-color: #fff;
+                margin: 0;
+            }
+            .radio:checked + .options {
+                color: white;
+                background-color: black;
+                border-color: black;
+            }
             .options {
-                width: 5vw;
-                padding: 2vw;
-                border-radius: 2vw;
+                font-family: "United Sans", sans-serif;
+                font-weight: bold;
+                border: solid;
+                border-color: RGB(207, 185, 145);
+                cursor: pointer;
+                background-color: RGB(207, 185, 145);
+                display: inline-block;
             }
 
-            .divider {
-                border: solid gray;
-                border-radius: 1vw;
-                border-width: 1vw;
-                width: 70vw;
-                margin-top: 10vw;
+            #list {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                background-color: black;
+                z-index: 1;
+                padding: 20px;
+                outline: 3px solid rgba(207, 185, 145, 0.8);
+            }
+
+            .nav-items {
+                display: flex;
+                justify-content: flex-end;
+                margin-right: 10%;
             }
 
             .nav-items a {
-                font-size: 4vw;
+                color: RGB(207, 185, 145);
+                text-decoration: none;
+                font-family: Arial, sans-serif;
+                margin: 0 15px;
+                transition: color 0.3s;
             }
-        }
 
-        .question {
-            padding: 10px;
-            height: auto;
-            text-align: center;
-        }
-
-        .header {
-            font-family: "United Sans Condensed", sans-serif;
-            font-weight: 900;
-            margin: 0;
-        }
-
-        .text {
-            font-family: "United Sans", sans-serif;
-            margin-top: 10px;
-        }
-
-        .radio {
-            -webkit-appearance: none;
-            appearance: none;
-            background-color: #fff;
-            margin: 0;
-        }
-
-        .radio:checked+.options {
-            color: white;
-            background-color: black;
-            border-color: black;
-        }
-
-        .options {
-            font-family: "United Sans", sans-serif;
-            font-weight: bold;
-            border: solid;
-            border-color: RGB(207, 185, 145);
-            cursor: pointer;
-            background-color: RGB(207, 185, 145);
-            display: inline-block;
-        }
-
-        #list {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: black;
-            z-index: 1;
-            padding: 20px;
-            outline: 2px solid rgba(207, 185, 145, 0.8);
-        }
-
-        .nav-items {
-            display: flex;
-            justify-content: flex-end;
-            margin-right: 10%;
-        }
-
-        .nav-items a {
-            color: RGB(207, 185, 145);
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            margin: 0 15px;
-            transition: color 0.3s;
-        }
-
-        .nav-items a:hover {
-            text-decoration: underline;
-            color: white;
-        }
-
-        .logo {
-            width: 100px;
-            margin-left: 10%;
-        }
-    </style>
-</head>
-
-<body>
-    <nav id="list">
-        <img src="BoilerHousingHub.png" alt="Logo" class="logo" />
-        <div class="nav-items">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="quiz.html">Quiz</a>
-        </div>
-    </nav>
-
-    <div id="main">
-        <div id="intro"></div>
-
-        <div id="problems">
-            <div id="Q1" class="question">
-                <h1 class="header">1. Opinion on Cason?</h1>
-                <p class="text">goon</p>
-
-                <input class="radio" type="radio" id="Q1-1" name="Q1" value="1" />
-                <label class="options" for="Q1-1">1</label>
-
-                <input class="radio" type="radio" id="Q1-2" name="Q1" value="2" />
-                <label class="options" for="Q1-2">2</label>
-
-                <input class="radio" type="radio" id="Q1-3" name="Q1" value="3" />
-                <label class="options" for="Q1-3">3</label>
-
-                <input class="radio" type="radio" id="Q1-4" name="Q1" value="4" />
-                <label class="options" for="Q1-4">4</label>
-
-                <input class="radio" type="radio" id="Q1-5" name="Q1" value="5" />
-                <label class="options" for="Q1-5">5</label>
-
-                <hr class="divider" />
+            .nav-items a:hover {
+                text-decoration: underline;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <nav id="list">
+            <div class="nav-items">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="quiz.html">Quiz</a>
             </div>
+        </nav>
 
-            <div id="Q2" class="question">
-                <h1 class="header">2. Opinion on Ruhaan?</h1>
-                <p class="text">goon</p>
+        <div id="main">
+            <div id="intro"></div>
 
-                <input class="radio" type="radio" id="Q2-1" name="Q2" value="1" />
-                <label class="options" for="Q2-1">1</label>
+            <div id="problems">
+                <div id="Q1" class="question">
+                    <h1 class="header">1. Opinion on Cason?</h1>
+                    <p class="text">goon</p>
 
-                <input class="radio" type="radio" id="Q2-2" name="Q2" value="2" />
-                <label class="options" for="Q2-2">2</label>
+                    <input class="radio" type="radio" id="Q1-1" name="Q1" value="1" />
+                    <label class="options" for="Q1-1">1</label>
 
-                <input class="radio" type="radio" id="Q2-3" name="Q2" value="3" />
-                <label class="options" for="Q2-3">3</label>
+                    <input class="radio" type="radio" id="Q1-2" name="Q1" value="2" />
+                    <label class="options" for="Q1-2">2</label>
 
-                <input class="radio" type="radio" id="Q2-4" name="Q2" value="4" />
-                <label class="options" for="Q2-4">4</label>
+                    <input class="radio" type="radio" id="Q1-3" name="Q1" value="3" />
+                    <label class="options" for="Q1-3">3</label>
 
-                <input class="radio" type="radio" id="Q2-5" name="Q2" value="5" />
-                <label class="options" for="Q2-5">5</label>
+                    <input class="radio" type="radio" id="Q1-4" name="Q1" value="4" />
+                    <label class="options" for="Q1-4">4</label>
 
-                <hr class="divider" />
+                    <input class="radio" type="radio" id="Q1-5" name="Q1" value="5" />
+                    <label class="options" for="Q1-5">5</label>
+
+                    <hr class="divider" />
+                </div>
+
+                <div id="Q2" class="question">
+                    <h1 class="header">2. Opinion on Ruhaan?</h1>
+                    <p class="text">goon</p>
+
+                    <input class="radio" type="radio" id="Q2-1" name="Q2" value="1" />
+                    <label class="options" for="Q2-1">1</label>
+
+                    <input class="radio" type="radio" id="Q2-2" name="Q2" value="2" />
+                    <label class="options" for="Q2-2">2</label>
+
+                    <input class="radio" type="radio" id="Q2-3" name="Q2" value="3" />
+                    <label class="options" for="Q2-3">3</label>
+
+                    <input class="radio" type="radio" id="Q2-4" name="Q2" value="4" />
+                    <label class="options" for="Q2-4">4</label>
+
+                    <input class="radio" type="radio" id="Q2-5" name="Q2" value="5" />
+                    <label class="options" for="Q2-5">5</label>
+
+                    <hr class="divider" />
+
+                    <div id="Q3" class="question">
+                        <h1 class="header">3. Opinion on a B?</h1>
+                        <p class="text">goon</p>
+
+                        <label for="RoomRank1">Rank 1:</label>
+                        <select name="RoomRank1" id="RoomRank1" onchange="RoomRank1()">
+                            <option value="0" selected></option>
+                            <option value="1" id="11">Single</option>
+                            <option value="2" id="12">Double</option>
+                            <option value="3" id="13">Triple</option>
+                            <option value="4" id="14">Quad</option>
+                        </select>
+                        <br />
+                        <label for="RoomRank2">Rank 2:</label>
+                        <select name="RoomRank2" id="RoomRank2" onchange="RoomRank2()">
+                            <option value="0" selected></option>
+                            <option value="1" id="21">Single</option>
+                            <option value="2" id="22">Double</option>
+                            <option value="3" id="23">Triple</option>
+                            <option value="4" id="24">Quad</option>
+                        </select>
+                        <br />
+                        <label for="RoomRank3">Rank 3:</label>
+                        <select name="RoomRank3" id="RoomRank3" onchange="RoomRank3()">
+                            <option value="0" selected></option>
+                            <option value="1" id="31">Single</option>
+                            <option value="2" id="32">Double</option>
+                            <option value="3" id="33">Triple</option>
+                            <option value="4" id="34">Quad</option>
+                        </select>
+                        <br />
+                        <label for="RoomRank4">Rank 4:</label>
+                        <select name="RoomRank4" id="RoomRank4" onchange="RoomRank4()">
+                            <option value="0" selected></option>
+                            <option value="1" id="41">Single</option>
+                            <option value="2" id="42">Double</option>
+                            <option value="3" id="43">Triple</option>
+                            <option value="4" id="43">Quad</option>
+                        </select>
+                        <hr class="divider" />
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</body>
-
+        <script>
+        function RoomRank4() {
+             var rr = document.getElementById("RoomRank4");
+             var r = rr.options[rr.selectedIndex].value;
+             document.getElementById("1" + r).selected = false;
+             document.getElementById("2" + r).selected = false;
+             document.getElementById("3" + r).selected = false;
+		}
+        
+        function RoomRank3() {
+             var rr = document.getElementById("RoomRank3");
+             var r = rr.options[rr.selectedIndex].value;
+             document.getElementById("1" + r).selected = false;
+             document.getElementById("2" + r).selected = false;
+             document.getElementById("4" + r).selected = false;
+		}
+        
+        function RoomRank2() {
+             var rr = document.getElementById("RoomRank2");
+             var r = rr.options[rr.selectedIndex].value;
+             
+             document.getElementById("1" + r).selected = false;
+             document.getElementById("3" + r).selected = false;
+             document.getElementById("4" + r).selected = false;
+		}
+        
+        function RoomRank1() {
+             var rr = document.getElementById("RoomRank1");
+             var r = rr.options[rr.selectedIndex].value;
+             
+             document.getElementById("2" + r).selected = false;
+             document.getElementById("3" + r).selected = false;
+             document.getElementById("4" + r).selected = false;
+		}
+        </script>
+    </body>
 </html>

@@ -8,6 +8,12 @@ body {background-color: RGB(207, 185, 145); margin: 0; padding: 0; height: 100vh
 
 #Q1 {background-color: grey; text-align: center;}
 #bar {background-color: black; z-index: 0;}
+.question {padding-bottom: 10px;}
+
+.radio {-webkit-appearance: none; appearance: none; background-color: #fff; margin: 0;}
+.options {border-style: solid; cursor: pointer; padding: 10px; background-color: white;}
+.radio:checked + .options {background-color: RGB(207, 185, 145);}
+
 </style>
 </head>
 <body>
@@ -21,18 +27,23 @@ body {background-color: RGB(207, 185, 145); margin: 0; padding: 0; height: 100vh
 
 <div id="problems">
 
-<div id="Q1">
+<div id="Q1" class="question">
 <h1>1. Opinion on Cason?</h1>
-<label for="Q1-1">1</label>
-<input type="radio" id="Q1-1" name="Q1" value="1">
-<label for="Q1-2">2</label>
-<input type="radio" id="Q1-2" name="Q1" value="2">
-<label for="Q1-3">3</label>
-<input type="radio" id="Q1-3" name="Q1" value="3">
-<label for="Q1-4">4</label>
-<input type="radio" id="Q1-4" name="Q1" value="4">
-<label for="Q1-5">5</label>
-<input type="radio" id="Q1-5" name="Q1" value="5">
+
+<input class="radio" type="radio" id="Q1-1" name="Q1" value="1">
+<label class="options" for="Q1-1">1</label>
+
+<input class="radio" type="radio" id="Q1-2" name="Q1" value="2">
+<label class="options"  for="Q1-2">2</label>
+
+<input class="radio" type="radio" id="Q1-3" name="Q1" value="3">
+<label class="options"  for="Q1-3">3</label>
+
+<input class="radio" type="radio" id="Q1-4" name="Q1" value="4">
+<label class="options"  for="Q1-4">4</label>
+
+<input class="radio" type="radio" id="Q1-5" name="Q1" value="5">
+<label class="options"  for="Q1-5">5</label>
 </div>
 
 </div>

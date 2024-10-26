@@ -3,28 +3,26 @@
 
 <head>
     <title>About - Purdue Housing Quiz</title>
-    <link rel="stylesheet" id="unitedsans-css"
-        href="https://www.purdue.edu/home/wp-content/mu-plugins/boilerup-wp/unitedsans.css?ver=6.6.2" type="text/css"
-        media="all">
+    <link rel="stylesheet" id="unitedsans-css" href="https://www.purdue.edu/home/wp-content/mu-plugins/boilerup-wp/unitedsans.css?ver=6.6.2" type="text/css" media="all" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <style>
         body {
             background-color: RGB(207, 185, 145);
             margin: 0;
             padding: 0;
-            height: 100vh;
-            overflow-x: hidden;
+            height: 100%;
         }
 
         #main {
             background-color: white;
-            width: 100vw;
-            max-width: 750px;
+            width: 80vw;
+            max-width: 1000px;
             height: 100vh;
             margin: auto;
             padding: 0;
             position: relative;
             top: 0;
-            padding-top: 100px;
+            margin-top: 0;
         }
 
         #content {
@@ -36,7 +34,7 @@
         .header {
             font-family: 'United Sans Condensed', sans-serif;
             font-weight: 900;
-            margin: 0;
+            margin-top: 10%;
         }
 
         .text {
@@ -45,6 +43,9 @@
         }
 
         #list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             position: fixed;
             top: 0;
             width: 100%;
@@ -73,11 +74,41 @@
             text-decoration: underline;
             color: white;
         }
+
+        .logo {
+            width: 100px;
+            margin-left: 10%;
+        }
+
+        @media (min-width: 981px) {
+            .nav-items a {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 980px) {
+            body {
+                background-color: white;
+            }
+
+            #main {
+                width: 100vw;
+            }
+
+            #content {
+                font-size: min(8vw);
+            }
+
+            .nav-items a {
+                font-size: 4vw;
+            }
+        }
     </style>
 </head>
 
 <body>
     <nav id="list">
+        <img src="BoilerHousingHub.png" alt="Logo" class="logo" />
         <div class="nav-items">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>

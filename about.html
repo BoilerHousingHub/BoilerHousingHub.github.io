@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>About - Purdue Housing Quiz</title>
+    <link rel="stylesheet" id="unitedsans-css"
+        href="https://www.purdue.edu/home/wp-content/mu-plugins/boilerup-wp/unitedsans.css?ver=6.6.2" type="text/css"
+        media="all">
+    <style>
+        body {
+            background-color: RGB(207, 185, 145);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+
+        #main {
+            background-color: white;
+            width: 100vw;
+            max-width: 750px;
+            height: 100vh;
+            margin: auto;
+            padding: 0;
+            position: relative;
+            top: 0;
+            padding-top: 100px;
+        }
+
+        #content {
+            font-size: min(5vw, 30px);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header {
+            font-family: 'United Sans Condensed', sans-serif;
+            font-weight: 900;
+            margin: 0;
+        }
+
+        .text {
+            font-family: "United Sans", sans-serif;
+            margin-top: 0;
+        }
+
+        #list {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: black;
+            z-index: 1;
+            padding: 20px;
+            outline: 2px solid rgba(207, 185, 145, 0.8);
+        }
+
+        .nav-items {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 10%;
+        }
+
+        .nav-items a {
+            color: RGB(207, 185, 145);
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            margin: 0 15px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-items a:hover {
+            text-decoration: underline;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="list">
+        <div class="nav-items">
+            <a href="about.html">About</a>
+            <a href="index.html">Home</a>
+        </div>
+    </nav>
+    <div id="main">
+        <div id="content">
+            <h1 class="header">About This Quiz</h1>
+            <p class="text">This quiz is designed to gather feedback on Purdue housing. Your opinions matter!</p>
+            <p class="text">Please provide honest responses to help us improve the housing experience.</p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -176,6 +176,78 @@
         <div id="intro"></div>
 
         <div id="problems">
+
+                <div id="Q1" class="question">
+                    <h1 class="header">1. Opinion on a B?</h1>
+                    <p class="text">Rank these based on their importance to you:</p>
+
+                    <label for="ValueRank1">Rank 1:</label>
+                    <select name="ValueRank1" id="ValueRank1" onchange="ValueRank1()">
+                        <option value="0" selected></option>
+                        <option value="1" id="v11">A/C vs. No A/C</option>
+                        <option value="2" id="v12">Bathroom Style</option>
+                        <option value="3" id="v13">Number of Roommates</option>
+                        <option value="4" id="v14">Cost</option>
+                        <option value="5" id="v15">Proximity to Academic Campus</option>
+                        <option value="6" id="v16">Proximity to Food</option>
+                    </select>
+                    <br />
+                    <label for="ValueRank2">Rank 2:</label>
+                    <select name="ValueRank2" id="ValueRank2" onchange="ValueRank2()">
+                        <option value="0" selected></option>
+                        <option value="1" id="v21">A/C vs. No A/C</option>
+                        <option value="2" id="v22">Bathroom Style</option>
+                        <option value="3" id="v23">Number of Roommates</option>
+                        <option value="4" id="v24">Cost</option>
+                        <option value="5" id="v25">Proximity to Academic Campus</option>
+                        <option value="6" id="v26">Proximity to Food</option>
+                    </select>
+                    <br />
+                    <label for="ValueRank3">Rank 3:</label>
+                    <select name="ValueRank3" id="ValueRank3" onchange="ValueRank3()">
+                        <option value="0" selected></option>
+                        <option value="1" id="v31">A/C vs. No A/C</option>
+                        <option value="2" id="v32">Bathroom Style</option>
+                        <option value="3" id="v33">Number of Roommates</option>
+                        <option value="4" id="v34">Cost</option>
+                        <option value="5" id="v35">Proximity to Academic Campus</option>
+                        <option value="6" id="v36">Proximity to Food</option>
+                    </select>
+                    <br />
+                    <label for="ValueRank4">Rank 4:</label>
+                    <select name="ValueRank4" id="ValueRank4" onchange="ValueRank4()">
+                        <option value="0" selected></option>
+                        <option value="1" id="v41">A/C vs. No A/C</option>
+                        <option value="2" id="v42">Bathroom Style</option>
+                        <option value="3" id="v43">Number of Roommates</option>
+                        <option value="4" id="v44">Cost</option>
+                        <option value="5" id="v45">Proximity to Academic Campus</option>
+                        <option value="6" id="v46">Proximity to Food</option>
+                    </select>
+                    <br />
+                    <label for="ValueRank5">Rank 5:</label>
+                    <select name="ValueRank5" id="ValueRank5" onchange="ValueRank5()">
+                        <option value="0" selected></option>
+                        <option value="1" id="v51">A/C vs. No A/C</option>
+                        <option value="2" id="v52">Bathroom Style</option>
+                        <option value="3" id="v53">Number of Roommates</option>
+                        <option value="4" id="v54">Cost</option>
+                        <option value="5" id="v55">Proximity to Academic Campus</option>
+                        <option value="6" id="v56">Proximity to Food</option>
+                    </select>
+                    <br />
+                    <label for="ValueRank6">Rank 6:</label>
+                    <select name="ValueRank6" id="ValueRank6" onchange="ValueRank6()">
+                        <option value="0" selected></option>
+                        <option value="1" id="v61">A/C vs. No A/C</option>
+                        <option value="2" id="v62">Bathroom Style</option>
+                        <option value="3" id="v63">Number of Roommates</option>
+                        <option value="4" id="v64">Cost</option>
+                        <option value="5" id="v65">Proximity to Academic Campus</option>
+                        <option value="6" id="v66">Proximity to Food</option>
+                    </select>
+                    <hr class="divider" />
+                </div>
             <div id="Q1" class="question">
                 <h1 class="header">1. Opinion on Cason?</h1>
                 <p class="text">goon</p>
@@ -296,6 +368,72 @@
             document.getElementById("2" + r).selected = false;
             document.getElementById("3" + r).selected = false;
             document.getElementById("4" + r).selected = false;
+        }
+
+        function ValueRank1() {
+            var rr = document.getElementById("ValueRank1");
+            var r = rr.options[rr.selectedIndex].value;
+
+            document.getElementById("v2" + r).selected = false;
+            document.getElementById("v3" + r).selected = false;
+            document.getElementById("v4" + r).selected = false;
+            document.getElementById("v5" + r).selected = false;
+            document.getElementById("v6" + r).selected = false;
+        }
+
+        function ValueRank2() {
+            var rr = document.getElementById("ValueRank2");
+            var r = rr.options[rr.selectedIndex].value;
+
+            document.getElementById("v1" + r).selected = false;
+            document.getElementById("v3" + r).selected = false;
+            document.getElementById("v4" + r).selected = false;
+            document.getElementById("v5" + r).selected = false;
+            document.getElementById("v6" + r).selected = false;
+        }
+
+        function ValueRank3() {
+            var rr = document.getElementById("ValueRank3");
+            var r = rr.options[rr.selectedIndex].value;
+
+            document.getElementById("v1" + r).selected = false;
+            document.getElementById("v2" + r).selected = false;
+            document.getElementById("v4" + r).selected = false;
+            document.getElementById("v5" + r).selected = false;
+            document.getElementById("v6" + r).selected = false;
+        }
+
+        function ValueRank4() {
+            var rr = document.getElementById("ValueRank4");
+            var r = rr.options[rr.selectedIndex].value;
+
+            document.getElementById("v1" + r).selected = false;
+            document.getElementById("v2" + r).selected = false;
+            document.getElementById("v3" + r).selected = false;
+            document.getElementById("v5" + r).selected = false;
+            document.getElementById("v6" + r).selected = false;
+        }
+
+        function ValueRank5() {
+            var rr = document.getElementById("ValueRank5");
+            var r = rr.options[rr.selectedIndex].value;
+
+            document.getElementById("v1" + r).selected = false;
+            document.getElementById("v2" + r).selected = false;
+            document.getElementById("v3" + r).selected = false;
+            document.getElementById("v4" + r).selected = false;
+            document.getElementById("v6" + r).selected = false;
+        }
+
+        function ValueRank6() {
+            var rr = document.getElementById("ValueRank6");
+            var r = rr.options[rr.selectedIndex].value;
+
+            document.getElementById("v1" + r).selected = false;
+            document.getElementById("v2" + r).selected = false;
+            document.getElementById("v3" + r).selected = false;
+            document.getElementById("v4" + r).selected = false;
+            document.getElementById("v5" + r).selected = false;
         }
     </script>
 </body>

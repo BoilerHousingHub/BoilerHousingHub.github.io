@@ -1,6 +1,6 @@
 # Boiler Housing Hub
 
-## Our Goal:
+## Our Goal 🥅:
 
 Problem – Finding suitable on-campus housing can be a challenging and overwhelming process, especially for incoming freshmen and other students new to Purdue. The housing options vary significantly in terms of amenities, location, room types, costs, and other important factors, making it difficult for students to identify the best fit for their needs and preferences. Due to the sheer number of possible data points that can go into finding a suitable living space, the process of individually searching for and factoring in these options can be very overwhelming and time-consuming.
 
@@ -8,7 +8,7 @@ Our Vision – Due to this problem at hand, our goal was to make this process of
 
 ---
 
-## Data Collection:
+## Data Collection 🔧:
 
 ### Data Type 1 – Raw Percentage:
 
@@ -40,7 +40,7 @@ Our Vision – Due to this problem at hand, our goal was to make this process of
 
 ---
 
-## Our Model:
+## Our Model 💻:
 
 **User Preferences** – After defining the variables used within our model, we looked to use user input to link the preference of the user to how our model would be used. After giving our user the ability to rank their preferences in order from 1 to 6, we converted their ranking to a constant multiplier in our dataset via a tiered weighting system. This ensured that the user’s preferences were considered the most during our calculations for each housing option and their compatibility with the user.
 
@@ -49,16 +49,12 @@ Future Development:
 
 ---
 
-## Future Improvements:
+## Future Improvements 📈:
 
 **Dynamic Data Structures** – Since there is only a limited amount of data to parse through, we decided it would be more time efficient to collect all the data ourselves and store it statically through creating objects in the .js file. Overall, it would be helpful to have an algorithm which can take all the raw-data we used and convert it to the metrics the way we did from another file. Doing so can extend the applicability of the website to not just more housing options in Purdue, but also expand our horizons into other universities.
 
 *Other suggestions are always welcome!*
 
-Most of our team going into this project had no experience in either HTML/CSS or JS (the two languages which are used to complete this project). During this project, our team was able to overcome this lack of experience, and we are incredibly proud of that! By creating a database within Purdue’s housing options, we were able to use the data-points available to us to design a power ranking system (first in a google-sheets file and then implemented into the website) which we then used to create our final metric. Lastly, just the ability to distribute the work across all 4 people and complete the project within the time-limit was an overall satisfying feeling that we’ll carry with ourselves for the foreseeable future.
-
-(1) This was our first ever hackathon, therefore nobody on the team was aware of the scope of the project we could tackle. Overcoming this required genuine hours spent into brainstorming problems we observe around us that we could attempt to solve. That’s how the Purdue Housing Hub was born.
-(2) Not having prior experience in the languages – We have talked about overcoming this challenge across multiple responses. In summary: we learnt on the job!
 ___________________________________________________________________________
 
 Note All data was collected from:

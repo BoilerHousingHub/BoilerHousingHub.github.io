@@ -494,8 +494,11 @@
                     let finalArray = makeArray();
                     for (let i = 0; i < finalArray.length; i++) {
                         let p = Number(finalArray[i][0]);
+                        console.log(p);
                         let red = 0;
                         let green = 0;
+                        console.log(p-50);
+                        console.log((p-50)*5.12);
                         if (p < 50) {
                             red = Math.round(256 - (p - 50) * 5.12);
                             green = 255;

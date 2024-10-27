@@ -53,7 +53,9 @@ Future Development:
 
 **Dynamic Data Structures** – Since there is only a limited amount of data to parse through, we decided it would be more time efficient to collect all the data ourselves and store it statically through creating objects in the .js file. Overall, it would be helpful to have an algorithm which can take all the raw-data we used and convert it to the metrics the way we did from another file. Doing so can extend the applicability of the website to not just more housing options in Purdue, but also expand our horizons into other universities.
 
-*Other suggestions are always welcome! (It’s 3 AM; I need sleep)*
+*Other suggestions are always welcome!*
+
+Most of our team going into this project had no experience in either HTML/CSS or JS (the two languages which are used to complete this project). During this project, our team was able to overcome this lack of experience, and we are incredibly proud of that! By creating a database within Purdue’s housing options, we were able to use the data-points available to us to design a power ranking system (first in a google-sheets file and then implemented into the website) which we then used to create our final metric. Lastly, just the ability to distribute the work across all 4 people and complete the project within the time-limit was an overall satisfying feeling that we’ll carry with ourselves for the foreseeable future.
 ___________________________________________________________________________
 
 Note All data was collected from:

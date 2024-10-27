@@ -431,6 +431,11 @@
         <script src="js/ResidenceDatabase.js" ></script>
 
         <script>
+            function setColor(p){
+                var red = p<50 ? 255 : Math.round(256 - (p-50)*5.12);
+                var green = p>50 ? 255 : Math.round((p)*5.12);
+                return "rgb(" + red + "," + green + ",0)";
+            }
         	let result = document.getElementById("result");
         	function verify() {
                 let bool = true;

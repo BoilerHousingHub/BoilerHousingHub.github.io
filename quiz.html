@@ -383,6 +383,8 @@
                 </div>
             </div>
         </div>
+        <script src="js/ResidenceDatabase.js" ></script>
+
         <script>
         	function verify() {
                 let bool = true;
@@ -429,7 +431,13 @@
                 	alert("Question 6 must be filled out.");
                 }
                 if (bool) {
-                alert("yippee");
+                getUserSex();
+                genderInclusive();
+                genderedDorm();
+                bathroomPref();
+                roomRank();
+                PowerRanking();
+                makeArray();
                 }
             }
             function RoomRank4() {

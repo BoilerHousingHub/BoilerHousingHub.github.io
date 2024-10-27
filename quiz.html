@@ -25,13 +25,15 @@
                 margin-top: 0;
             }
 
-            #problems, #submit {
+            #problems,
+            #submit {
                 font-size: min(5vw, 30px);
                 padding-top: 110px;
             }
 
             @media (min-width: 981px) {
-                .options, #submit {
+                .options,
+                #submit {
                     padding: 10px;
                     border-radius: 10px;
                 }
@@ -53,31 +55,31 @@
                     text-wrap: balance;
                 }
                 select {
-                	height: 30px;
-                	font-size: 20px;
-            	}
-            .resultItems {
-            	border: solid;
-                border-color: black;
-                border-radius: 10px;
-                width: 40vw;
-                margin: auto;
-                height: 100px;
-                margin-bottom: 20px;
-          }
-          .resultImgs {
-          		width: 100px;
-                float: left;
-    			border-radius:8px;
-    			overflow:hidden;
-          }
-          .resultPs {
-          		font-family: "United Sans", sans-serif;
-          		position: relative;
-                text-align: center;
-                padding: 5px;
-                margin: 0;
-          }
+                    height: 30px;
+                    font-size: 20px;
+                }
+                .resultItems {
+                    border: solid;
+                    border-color: black;
+                    border-radius: 10px;
+                    width: 40vw;
+                    margin: auto;
+                    height: 100px;
+                    margin-bottom: 20px;
+                }
+                .resultImgs {
+                    width: 100px;
+                    float: left;
+                    border-radius: 8px;
+                    overflow: hidden;
+                }
+                .resultPs {
+                    font-family: "United Sans", sans-serif;
+                    position: relative;
+                    text-align: center;
+                    padding: 5px;
+                    margin: 0;
+                }
             }
 
             @media (max-width: 980px) {
@@ -89,11 +91,13 @@
                     width: 100vw;
                 }
 
-                #problems, #submit {
+                #problems,
+                #submit {
                     font-size: 8vw;
                 }
 
-                .options, #submit {
+                .options,
+                #submit {
                     width: auto;
                     padding: 2vw;
                     border-radius: 2vw;
@@ -114,33 +118,33 @@
                     padding-left: 5vw;
                     padding-right: 5vw;
                 }
-           		select {
-                	height: 6vw;
-                	font-size: 3.5vw;
+                select {
+                    height: 6vw;
+                    font-size: 3.5vw;
                 }
-                
+
                 .resultItems {
-            	border: solid;
-                border-color: black;
-                border-radius: 10px;
-                width: 80vw;
-                margin: auto;
-                height: 20vw;
-                margin-bottom: 20px;
-          		}
-          		.resultImgs {
-          		width: 20vw;
-                float: left;
-    			border-radius:8px;
-    			overflow:hidden;
-        	  	}
+                    border: solid;
+                    border-color: black;
+                    border-radius: 10px;
+                    width: 80vw;
+                    margin: auto;
+                    height: 20vw;
+                    margin-bottom: 20px;
+                }
+                .resultImgs {
+                    width: 20vw;
+                    float: left;
+                    border-radius: 8px;
+                    overflow: hidden;
+                }
                 .resultPs {
-          		font-family: "United Sans", sans-serif;
-          		position: relative;
-                text-align: center;
-                padding: 0.75vw;
-                margin: 0;
-              	}
+                    font-family: "United Sans", sans-serif;
+                    position: relative;
+                    text-align: center;
+                    padding: 0.75vw;
+                    margin: 0;
+                }
             }
 
             .question {
@@ -167,13 +171,15 @@
                 margin: 0;
             }
 
-            .radio:checked + .options, #submit:active {
+            .radio:checked + .options,
+            #submit:active {
                 color: white;
                 background-color: black;
                 border-color: black;
             }
 
-            .options, #submit {
+            .options,
+            #submit {
                 font-family: "United Sans", sans-serif;
                 font-weight: bold;
                 border: solid;
@@ -379,9 +385,9 @@
 
                     <hr class="divider" />
                 </div>
-                
+
                 <div id="Q6" class="question">
-                   <h1 class="header">6. Number of Roommates</h1>
+                    <h1 class="header">6. Number of Roommates</h1>
                     <p class="text">Please rank your preference in your ideal number of roommates:</p>
 
                     <label class="ranking" for="RoomRank1">Rank 1:</label>
@@ -421,96 +427,104 @@
                     </select>
                     <hr class="divider" />
                 </div>
-                
+
                 <div class="question">
-                	<button id="submit" onclick="verify()">Submit</button>
+                    <button id="submit" onclick="verify()">Submit</button>
                     <hr class="divider" />
                 </div>
                 <div id="result"></div>
             </div>
         </div>
-        <script src="js/ResidenceDatabase.js" ></script>
+        <script src="js/ResidenceDatabase.js"></script>
 
         <script>
-            function setColor(p) {
-                let red = 0;
-                let green = 0;
-                if (p < 50) {
-                    red = Math.round(256 - (p - 50) * 5.12)
-                    green = 255;
-                } else {
-                    green = Math.round((p) * 5.12)
-                    red = 255;
-                }
-                return "rgb(" + red + "," + green + ",0)";
-            }
-        	let result = document.getElementById("result");
-        	function verify() {
+            let result = document.getElementById("result");
+            function verify() {
                 let bool = true;
-            	let v1 = document.getElementById('ValueRank1').value;
-            	let v2 = document.getElementById('ValueRank2').value;
-            	let v3 = document.getElementById('ValueRank3').value;
-            	let v4 = document.getElementById('ValueRank4').value;
-            	let v5 = document.getElementById('ValueRank5').value;
-            	let v6 = document.getElementById('ValueRank6').value;
-          		let Q21 = document.getElementById('Q2-1').checked;
-          		let Q22 = document.getElementById('Q2-2').checked;
-          		let Q23 = document.getElementById('Q2-3').checked;
-          		let Q31 = document.getElementById('Q3-1').checked;
-          		let Q32 = document.getElementById('Q3-2').checked;
-          		let Q41 = document.getElementById('Q4-1').checked;
-          		let Q42 = document.getElementById('Q4-2').checked;
-          		let Q51 = document.getElementById('Q5-1').checked;
-          		let Q52 = document.getElementById('Q5-2').checked;
-          		let Q53 = document.getElementById('Q5-3').checked;
-          		let Q54 = document.getElementById('Q5-4').checked;
-          		let Q55 = document.getElementById('Q5-5').checked;
-            	let r1 = document.getElementById('RoomRank1').value;
-            	let r2 = document.getElementById('RoomRank2').value;
-            	let r3 = document.getElementById('RoomRank3').value;
-            	let r4 = document.getElementById('RoomRank4').value;
-                
+                let v1 = document.getElementById("ValueRank1").value;
+                let v2 = document.getElementById("ValueRank2").value;
+                let v3 = document.getElementById("ValueRank3").value;
+                let v4 = document.getElementById("ValueRank4").value;
+                let v5 = document.getElementById("ValueRank5").value;
+                let v6 = document.getElementById("ValueRank6").value;
+                let Q21 = document.getElementById("Q2-1").checked;
+                let Q22 = document.getElementById("Q2-2").checked;
+                let Q23 = document.getElementById("Q2-3").checked;
+                let Q31 = document.getElementById("Q3-1").checked;
+                let Q32 = document.getElementById("Q3-2").checked;
+                let Q41 = document.getElementById("Q4-1").checked;
+                let Q42 = document.getElementById("Q4-2").checked;
+                let Q51 = document.getElementById("Q5-1").checked;
+                let Q52 = document.getElementById("Q5-2").checked;
+                let Q53 = document.getElementById("Q5-3").checked;
+                let Q54 = document.getElementById("Q5-4").checked;
+                let Q55 = document.getElementById("Q5-5").checked;
+                let r1 = document.getElementById("RoomRank1").value;
+                let r2 = document.getElementById("RoomRank2").value;
+                let r3 = document.getElementById("RoomRank3").value;
+                let r4 = document.getElementById("RoomRank4").value;
+
                 if (v1 == 0 || v2 == 0 || v3 == 0 || v4 == 0 || v5 == 0 || v6 == 0) {
-               		bool = false;
-                	alert("Question 1 must be filled out.");
-                } else if (!(Q21 === true || Q22 === true  || Q23 === true)) {
-                	bool = false;
-                	alert("Question 2 must be filled out.");
+                    bool = false;
+                    alert("Question 1 must be filled out.");
+                } else if (!(Q21 === true || Q22 === true || Q23 === true)) {
+                    bool = false;
+                    alert("Question 2 must be filled out.");
                 } else if (!(Q31 === true || Q32 === true)) {
-                	bool = false;
-                	alert("Question 3 must be filled out.");
+                    bool = false;
+                    alert("Question 3 must be filled out.");
                 } else if (!(Q41 === true || Q42 === true)) {
-                	bool = false;
-                	alert("Question 4 must be filled out.");
+                    bool = false;
+                    alert("Question 4 must be filled out.");
                 } else if (!(Q51 === true || Q52 === true || Q53 === true || Q54 === true || Q55 === true)) {
-                	bool = false;
-                	alert("Question 5 must be filled out.");
+                    bool = false;
+                    alert("Question 5 must be filled out.");
                 } else if (r1 == 0 || r2 == 0 || r3 == 0 || r4 == 0) {
-               		bool = false;
-                	alert("Question 6 must be filled out.");
+                    bool = false;
+                    alert("Question 6 must be filled out.");
                 }
                 if (bool) {
-            	result.innerHTML = "";
-                getUserSex();
-                genderInclusive();
-                genderedDorm();
-                bathroomPref();
-                roomRank();
-                PowerRanking();
-                let finalArray = makeArray();
-                for (let i = 0; i < finalArray.length; i++) {
-                	let resultColor = setColor(finalArray[i][0]);
-                	let newDiv = document.createElement("div");
-                    newDiv.innerHTML=
-                   `
+                    result.innerHTML = "";
+                    getUserSex();
+                    genderInclusive();
+                    genderedDorm();
+                    bathroomPref();
+                    roomRank();
+                    PowerRanking();
+                    let finalArray = makeArray();
+                    for (let i = 0; i < finalArray.length; i++) {
+                        let p = Number(finalArray[i][0]);
+                        let red = 0;
+                        let green = 0;
+                        if (p < 50) {
+                            red = Math.round(256 - (p - 50) * 5.12);
+                            green = 255;
+                        } else {
+                            green = Math.round(p * 5.12);
+                            red = 255;
+                        }
+                        let resultColor = "rgb(" + red + "," + green + ",0)";
+                        let newDiv = document.createElement("div");
+                        newDiv.innerHTML =
+                            `
                 	<div class="resultItems">
-                    	<img class="resultImgs" src="https://boilerhousinghub.github.io/images/` + finalArray[i][0].name + `.png">
-                   	 	<p class="resultPs" style="font-weight: bold;">` + (i+1) + `. ` + finalArray[i][0].name + `</p>
-                    	<p class="resultPs" style="color: ` + resultColor + `;">` + finalArray[i][1] + `% match</p>
+                    	<img class="resultImgs" src="https://boilerhousinghub.github.io/images/` +
+                            finalArray[i][0].name +
+                            `.png">
+                   	 	<p class="resultPs" style="font-weight: bold;">` +
+                            (i + 1) +
+                            `. ` +
+                            finalArray[i][0].name +
+                            `</p>
+                    	<p class="resultPs" style="color: ` +
+                            resultColor +
+                            `;">` +
+                            finalArray[i][1] +
+                            `% match</p>
                 	</div>
-                   `
-            	    result.append(newDiv);
-                }
+                   `;
+                        result.append(newDiv);
+                    }
                 }
             }
             function RoomRank4() {

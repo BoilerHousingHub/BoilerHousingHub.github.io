@@ -62,7 +62,7 @@
                     border: solid;
                     border-color: black;
                     border-radius: 10px;
-                    width: 40vw;
+                    width: 400px;
                     margin: auto;
                     height: 100px;
                     margin-bottom: 20px;
@@ -232,6 +232,10 @@
             .ranking {
                 position: relative;
                 font-family: "United Sans", sans-serif;
+            }
+            .resultCs {
+            	-webkit-font-stroke-width: 0.25px;
+                -webkit-font-stroke-color: gray;
             }
         </style>
     </head>
@@ -516,7 +520,7 @@
                             `. ` +
                             finalArray[i][0].name +
                             `</p>
-                    	<p class="resultPs" style="color: ` +
+                    	<p class="resultPs, resultCs" style="color: ` +
                             resultColor +
                             `;">` +
                             finalArray[i][1] +
@@ -525,6 +529,12 @@
                    `;
                         result.append(newDiv);
                     }
+                    let lastDivide = document.createElement("div");
+                    lastDivide.innerHTML = 
+                    `
+                    <hr class="divider" />
+                    `
+                    result.append(lastDivide);
                 }
             }
             function RoomRank4() {

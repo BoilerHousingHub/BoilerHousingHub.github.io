@@ -433,15 +433,17 @@
 
         <script>
             function setColor(p){
+                let red;
+                let green;
                 if (p<50) {
-                    let red = Math.round(256 - (p-50)*5.12)
-                    let green = 255;
+                    red = Math.round(256 - (p-50)*5.12)
+                    green = 255;
                 } else {
-                    let green = Math.round((p)*5.12)
-                    let red = 255;
+                    green = Math.round((p)*5.12)
+                    red = 255;
                 }
                 return "rgb(" + red + "," + green + ",0)";
-                }
+            }
         	let result = document.getElementById("result");
         	function verify() {
                 let bool = true;

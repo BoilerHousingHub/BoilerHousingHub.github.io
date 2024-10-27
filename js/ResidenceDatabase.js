@@ -122,10 +122,10 @@ let roomRank4;
 let expRes;
 
 function roomRank () {
-    roomRank1 = document.getElementsById('RoomRank1').value;
-    roomRank2 = document.getElementsById('RoomRank2').value;
-    roomRank3 = document.getElementsById('RoomRank3').value;
-    roomRank4 = document.getElementsById('RoomRank4').value;
+    roomRank1 = document.getElementById('RoomRank1').value;
+    roomRank2 = document.getElementById('RoomRank2').value;
+    roomRank3 = document.getElementById('RoomRank3').value;
+    roomRank4 = document.getElementById('RoomRank4').value;
     // Making the factors
     roomRank1 = parseFloat(roomRank1) * 0.8;
     roomRank2 = parseFloat(roomRank2) * 0.15;
@@ -143,7 +143,7 @@ let distanceImportance; //4
 let foodImportance; //5
 let importanceArray = [acImportance, bathroomImportance, roommateImportance, costImportance, distanceImportance, foodImportance];
 
-function PowerRanking () {
+function PowerRanking() {
     let valueRank1 = parseInt(document.getElementById('ValueRank1').value)-1;
     let valueRank2 = parseInt(document.getElementById('ValueRank2').value)-1;
     let valueRank3 = parseInt(document.getElementById('ValueRank3').value)-1;
@@ -202,13 +202,13 @@ function calculatePowerRanking (residence) {
     
     // Checking for Gender inclusive housing
     if (userGenderInclusive === "Yes" && (residence.name === "Hawkins" || residence.name === "Hillenbrand" || residence.name === "Hilltop")) {
-        powerRank = powerRank + 10;
+        powerRank = powerRank + 20;
     }
     // Checking for gendered housing
     if (userGenderedDorm === "Yes" && userSelectedSex === "Male" && residence.allMale) {
-        powerRank = powerRank + 10;
+        powerRank = powerRank + 20;
     } else if (userGenderedDorm === "Yes" && userSelectedSex === "Female" && residence.allFemale) {
-        powerRank = powerRank + 10;
+        powerRank = powerRank + 20;
     }
     if (powerRank > 100.0) {
         powerRank = 100.0;
@@ -219,7 +219,7 @@ function calculatePowerRanking (residence) {
 // Making our final data array
 let finalArray;
 function makeArray() {
-    let tempArray;
+    let tempArray = [];
     for (i = 0; i < dataArray.length; i ++) {
         if (userSelectedSex === "Male") {
             if (!dataArray[i].allFemale) {

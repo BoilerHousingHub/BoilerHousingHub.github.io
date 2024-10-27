@@ -3,7 +3,9 @@
 
 <head>
     <title>Purdue Housing Quiz - Home</title>
-    <link rel="stylesheet" id="unitedsans-css" href="https://www.purdue.edu/home/wp-content/mu-plugins/boilerup-wp/unitedsans.css?ver=6.6.2" type="text/css" media="all" />
+    <link rel="stylesheet" id="unitedsans-css"
+        href="https://www.purdue.edu/home/wp-content/mu-plugins/boilerup-wp/unitedsans.css?ver=6.6.2" type="text/css"
+        media="all" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <style>
         body {
@@ -17,7 +19,7 @@
             background-color: white;
             width: 80vw;
             max-width: 1000px;
-            height: 100vh;
+            height: 100%;
             margin: auto;
             padding: 0;
             position: relative;
@@ -29,17 +31,40 @@
             font-size: min(5vw, 30px);
             padding: 20px;
             text-align: center;
+            margin: 0 auto;
         }
 
         .header {
             font-family: 'United Sans Condensed', sans-serif;
             font-weight: 900;
             margin-top: 10%;
+            margin-bottom: 1%;
         }
 
         .text {
+            max-width: 75%;
             font-family: "United Sans", sans-serif;
-            margin-top: 0;
+            margin: 2% auto 0;
+            display: block;
+        }
+
+        .button {
+            width: 15%;
+            background-color: RGB(207, 185, 145);
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 20px;
+            margin: 2% auto;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: rgb(0, 0, 0);
         }
 
         #list {
@@ -64,7 +89,7 @@
         .nav-items a {
             color: RGB(207, 185, 145);
             text-decoration: none;
-            font-family: Arial, sans-serif;
+            font-family: "United Sans", sans-serif;
             margin: 0 15px;
             transition: color 0.3s;
         }
@@ -77,6 +102,41 @@
         .logo {
             width: 100px;
             margin-left: 10%;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 80%;
+            margin: 20px auto;
+            text-align: center;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider {
+            display: flex;
+            cursor: grab; /* Change cursor to indicate draggable */
+            user-select: none; /* Prevent text selection */
+            overflow-x: auto; /* Allow horizontal scrolling */
+            scroll-behavior: smooth; /* Smooth scrolling */
+            padding: 10px; /* Padding for aesthetics */
+        }
+
+        .hall {
+            min-width: 150px;
+            padding: 20px;
+            background-color: RGB(207, 185, 145);
+            color: white;
+            border-radius: 10px;
+            margin: 5px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .hall:hover {
+            background-color: rgb(0, 0, 0);
         }
 
         @media (min-width: 981px) {
@@ -108,6 +168,7 @@
 <body>
     <nav id="list">
         <img src="BoilerHousingHub.png" alt="Logo" class="logo" />
+        <span style="font-weight: bold; color: RGB(207, 185, 145); margin-left: 5%;">Boiler Housing Hub</span>
         <div class="nav-items">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -117,10 +178,64 @@
     <div id="main">
         <div id="content">
             <h1 class="header">Welcome to the Purdue Housing Quiz</h1>
-            <p class="text">This quiz is designed to gather feedback on Purdue housing. Your opinions are valuable!</p>
-            <p class="text">Please click on the "Quiz" link to get started.</p>
+            <p class="text">This quiz is designed to find your perfect living space here at Purdue</p>
+            <p class="text">To jump right into the quiz click the button below</p>
+            <a href="quiz.html" class="button">Quiz!</a>
+            <p class="text">To find out more about the logic behind this website click the button below</p>
+            <a href="about.html" class="button">About!</a>
+            <p class="text">To learn about the residence halls click any of the links below!</p>
+
+            <!-- Slider Container -->
+            <div class="slider-container">
+                <div class="slider" id="slider">
+                    <div class="hall" onclick="scrollToSection('earhart')">Earhart</div>
+                    <div class="hall" onclick="scrollToSection('tarkington')">Tarkington</div>
+                    <div class="hall" onclick="scrollToSection('harrison')">Harrison</div>
+                    <div class="hall" onclick="scrollToSection('hillenbrand')">Hillenbrand</div>
+                    <div class="hall" onclick="scrollToSection('meridith')">Meridith</div>
+                    <div class="hall" onclick="scrollToSection('carry')">Carry</div>
+                    <div class="hall" onclick="scrollToSection('wiley')">Wiley</div>
+                    <div class="hall" onclick="scrollToSection('mccutcheon')">Mccutcheon</div>
+                </div>
+            </div>
         </div>
+
+        <h2 id="earhart">Earhart Hall</h2>
+        <p>Information about Earhart Hall.</p>
+
+        <h2 id="tarkington">Tarkington Hall</h2>
+        <p>Information about Tarkington Hall.</p>
+
+        <h2 id="harrison">Harrison Hall</h2>
+        <p>Information about Harrison Hall.</p>
+
+        <h2 id="hillenbrand">Hillenbrand Hall</h2>
+        <p>Information about Hillenbrand Hall.</p>
+
+        <h2 id="meridith">Meridith Hall</h2>
+        <p>Information about Meridith Hall.</p>
+
+        <h2 id="carry">Carry Hall</h2>
+        <p>Information about Carry Hall.</p>
+
+        <h2 id="wiley">Wiley Hall</h2>
+        <p>Information about Wiley Hall.</p>
+
+        <h2 id="mccutcheon">Mccutcheon Hall</h2>
+        <p>Information about Mccutcheon Hall.</p>
     </div>
+
+    <script>
+        function scrollToSection(id) {
+            const section = document.getElementById(id);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
+    </script>
+
 </body>
 
 </html>

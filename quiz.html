@@ -381,11 +381,14 @@
                 	<button id="submit" onclick="verify()">Submit</button>
                     <hr class="divider" />
                 </div>
+                <div id="result">
+                </div>
             </div>
         </div>
         <script src="js/ResidenceDatabase.js" ></script>
 
         <script>
+        	let result = document.getElementById("result");
         	function verify() {
                 let bool = true;
             	let v1 = document.getElementById('ValueRank1').value;
@@ -439,7 +442,7 @@
                 PowerRanking();
                 let finalArray = makeArray();
                 for (let i = 0; i < finalArray.length; i++) {
-                    console.log(finalArray[i][0].name)
+            	    result.append(finalArray[i][0].name, document.createElement("p"));
                 }
                 }
             }

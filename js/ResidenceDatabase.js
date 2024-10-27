@@ -223,20 +223,19 @@ function makeArray() {
     for (i = 0; i < dataArray.length; i ++) {
         if (userSelectedSex === "Male") {
             if (!dataArray[i].allFemale) {
-                tempArray.push([dataArray[i], calculatePowerRanking(dataArray[i])]);
+                tempArray.push([dataArray[i], Math.round(calculatePowerRanking(dataArray[i])*10)/10]);
             }
         } else if (userSelectedSex === "Female") {
             if (!dataArray[i].allMale) {
-                tempArray.push([dataArray[i], calculatePowerRanking(dataArray[i])]);
+                tempArray.push([dataArray[i], Math.round(calculatePowerRanking(dataArray[i])*10)/10]);
             }
         } else if (userSelectedSex === "Other") {
             if (!dataArray[i].allMale && !dataArray[i].allFemale) {
-                tempArray.push([dataArray[i], calculatePowerRanking(dataArray[i])]);
+                tempArray.push([dataArray[i], Math.round(calculatePowerRanking(dataArray[i])*10)/10]);
             }
         }
     }
     finalArray = (tempArray.sort((a,b) => b[1] - a[1]));
-    for (let i = 0; i < finalArray.length; i ++ ) {
-        console.log(finalArray[i][0].name + finalArray[i][1]);
-    }
+
+    return finalArray;
 }

@@ -66,6 +66,7 @@
             }
 
             .resultItems {
+                text-align: center;
                 border: solid;
                 border-color: black;
                 border-radius: 10px;
@@ -144,6 +145,7 @@
 
             .resultItems {
                 border: solid;
+                text-align: center;
                 border-color: black;
                 border-radius: 10px;
                 width: 80vw;
@@ -468,9 +470,23 @@
         </div>
     </div>
     <script src="js/ResidenceDatabase.js"></script>
-
     <script>
         let result = document.getElementById("result");
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            const offset = 85;
+
+            if (section) {
+                const elementPosition = section.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
         function verify() {
             let bool = true;
             let v1 = document.getElementById("ValueRank1").value;
@@ -543,11 +559,11 @@
                     	<img class="resultImgs" src="https://boilerhousinghub.github.io/images/` +
                         finalArray[i][0].name +
                         `.png">
-                   	 	<a target="_blank" href="` + finalArray[i][0].link + `" class="resultPs" style="font-weight: bold;">` +
+                   	 	<p class="resultPs">` +
                         (i + 1) +
                         `. ` +
                         finalArray[i][0].name +
-                        `</a>
+                        `</p>
                     	<p class="resultPs" style="-webkit-text-stroke-width: 0.25px; -webkit-text-stroke-color: black; color: ` +
                         resultColor +
                         `;">` +
@@ -563,8 +579,8 @@
                     <hr class="divider""/>
                     `
                 result.append(lastDivide);
-                result.scrollIntoView();
-                window.scrollBy(0,85);
+                // result.scrollIntoView();
+                scrollToSection(result);
             }
         }
         function RoomRank4() {

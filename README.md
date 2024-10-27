@@ -56,6 +56,9 @@ Future Development:
 *Other suggestions are always welcome!*
 
 Most of our team going into this project had no experience in either HTML/CSS or JS (the two languages which are used to complete this project). During this project, our team was able to overcome this lack of experience, and we are incredibly proud of that! By creating a database within Purdue’s housing options, we were able to use the data-points available to us to design a power ranking system (first in a google-sheets file and then implemented into the website) which we then used to create our final metric. Lastly, just the ability to distribute the work across all 4 people and complete the project within the time-limit was an overall satisfying feeling that we’ll carry with ourselves for the foreseeable future.
+
+(1) This was our first ever hackathon, therefore nobody on the team was aware of the scope of the project we could tackle. Overcoming this required genuine hours spent into brainstorming problems we observe around us that we could attempt to solve. That’s how the Purdue Housing Hub was born.
+(2) Not having prior experience in the languages – We have talked about overcoming this challenge across multiple responses. In summary: we learnt on the job!
 ___________________________________________________________________________
 
 Note All data was collected from:

@@ -432,14 +432,14 @@
         <script src="js/ResidenceDatabase.js" ></script>
 
         <script>
-            function setColor(p){
-                let red;
-                let green;
-                if (p<50) {
-                    red = Math.round(256 - (p-50)*5.12)
+            function setColor(p) {
+                let red = 0;
+                let green = 0;
+                if (p < 50) {
+                    red = Math.round(256 - (p - 50) * 5.12)
                     green = 255;
                 } else {
-                    green = Math.round((p)*5.12)
+                    green = Math.round((p) * 5.12)
                     red = 255;
                 }
                 return "rgb(" + red + "," + green + ",0)";

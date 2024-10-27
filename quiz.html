@@ -437,7 +437,10 @@
                 bathroomPref();
                 roomRank();
                 PowerRanking();
-                makeArray();
+                let finalArray = makeArray();
+                for (let i = 0; i < finalArray.length; i++) {
+                    console.log(finalArray[i][0].name)
+                }
                 }
             }
             function RoomRank4() {

@@ -56,6 +56,28 @@
                 	height: 30px;
                 	font-size: 20px;
             	}
+            .resultItems {
+            	border: solid;
+                border-color: black;
+                border-radius: 10px;
+                width: 40vw;
+                margin: auto;
+                height: 100px;
+                margin-bottom: 20px;
+          }
+          .resultImgs {
+          		width: 100px;
+                float: left;
+    			border-radius:8px;
+    			overflow:hidden;
+          }
+          .resultPs {
+          		font-family: "United Sans", sans-serif;
+          		position: relative;
+                text-align: center;
+                padding: 5px;
+                margin: 0;
+          }
             }
 
             @media (max-width: 980px) {
@@ -96,6 +118,29 @@
                 	height: 6vw;
                 	font-size: 3.5vw;
                 }
+                
+                .resultItems {
+            	border: solid;
+                border-color: black;
+                border-radius: 10px;
+                width: 80vw;
+                margin: auto;
+                height: 20vw;
+                margin-bottom: 20px;
+          		}
+          		.resultImgs {
+          		width: 20vw;
+                float: left;
+    			border-radius:8px;
+    			overflow:hidden;
+        	  	}
+                .resultPs {
+          		font-family: "United Sans", sans-serif;
+          		position: relative;
+                text-align: center;
+                padding: 0.75vw;
+                margin: 0;
+              	}
             }
 
             .question {
@@ -182,29 +227,6 @@
                 position: relative;
                 font-family: "United Sans", sans-serif;
             }
-            .resultItems {
-            	border: solid;
-                border-color: black;
-                border-radius: 10px;
-                width: 50vw;
-                margin: auto;
-                height: 100px;
-                padding: 20px;
-          }
-          .resultImgs {
-          		width: 100px;
-                float: left;
-    			border-radius:8px;
-    			overflow:hidden;
-          }
-          .resultPs {
-          		font-family: "United Sans", sans-serif;
-          		position: relative;
-                left: 5px;
-                text-align: center;
-                padding: 5px;
-                margin: 0;
-          }
         </style>
     </head>
 
@@ -404,8 +426,6 @@
                 	<button id="submit" onclick="verify()">Submit</button>
                     <hr class="divider" />
                 </div>
-                <div id="result">
-                </div>
             </div>
         </div>
         <script src="js/ResidenceDatabase.js" ></script>
@@ -466,13 +486,14 @@
                 PowerRanking();
                 let finalArray = makeArray();
                 for (let i = 0; i < finalArray.length; i++) {
+                	let resultColor = setColor(finalArray[i][0]);
                 	let newDiv = document.createElement("div");
                     newDiv.innerHTML=
                    `
                 	<div class="resultItems">
                     	<img class="resultImgs" src="https://boilerhousinghub.github.io/images/` + finalArray[i][0].name + `.png">
                    	 	<p class="resultPs" style="font-weight: bold;">` + (i+1) + `. ` + finalArray[i][0].name + `</p>
-                    	<p class="resultPs">` + finalArray[i][1] + `% match</p>
+                    	<p class="resultPs" style="color: ` + resultColor + `;">` + finalArray[i][1] + `% match</p>
                 	</div>
                    `
             	    result.append(newDiv);

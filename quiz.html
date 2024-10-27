@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -80,6 +82,15 @@
                     padding: 5px;
                     margin: 0;
                 }
+            .resultCs {
+                    font-family: "United Sans", sans-serif;
+                    position: relative;
+                    text-align: center;
+                    padding: 5px;
+                    margin: 0;
+            	-webkit-font-stroke-width: 0.25px;
+                -webkit-font-stroke-color: gray;
+            }
             }
 
             @media (max-width: 980px) {
@@ -145,6 +156,15 @@
                     padding: 0.75vw;
                     margin: 0;
                 }
+                .resultCs {
+                    font-family: "United Sans", sans-serif;
+                    position: relative;
+                    text-align: center;
+                    padding: 0.75vw;
+                    margin: 0;
+            	-webkit-font-stroke-width: 0.25px;
+                -webkit-font-stroke-color: gray;
+            }
             }
 
             .question {
@@ -232,10 +252,6 @@
             .ranking {
                 position: relative;
                 font-family: "United Sans", sans-serif;
-            }
-            .resultCs {
-            	-webkit-font-stroke-width: 0.25px;
-                -webkit-font-stroke-color: gray;
             }
         </style>
     </head>
@@ -532,7 +548,7 @@
                     let lastDivide = document.createElement("div");
                     lastDivide.innerHTML = 
                     `
-                    <hr class="divider" />
+                    <hr class="divider" style="padding-bottom: 20px;"/>
                     `
                     result.append(lastDivide);
                 }

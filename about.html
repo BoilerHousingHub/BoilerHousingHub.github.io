@@ -58,16 +58,21 @@
         .nav-items {
             display: flex;
             justify-content: flex-end;
-            margin-right: 10%;
+            margin-right: 5vw;
         }
 
         .nav-items a {
             color: RGB(207, 185, 145);
             text-decoration: none;
-            font-family: Arial, sans-serif;
-            margin: 0 15px;
-            font-size: 16px;
+            font-family: "United Sans", sans-serif;
+            margin: 0 1vw;
             transition: color 0.3s;
+        }
+
+        .hub-text {
+            color: RGB(207, 185, 145);
+            font-family: "United Sans", sans-serif;
+            margin-left: 11.5vw;
         }
 
         .nav-items a:hover {
@@ -76,13 +81,16 @@
         }
 
         .logo {
-            width: 100px;
-            margin-left: 10%;
+            width: 50px;
+            margin-left: 1vw;
         }
 
         @media (min-width: 981px) {
             .nav-items a {
                 font-size: 16px;
+            }
+            .hub-text {
+                font-size: 25px;
             }
         }
 
@@ -100,6 +108,10 @@
             }
 
             .nav-items a {
+                font-size: 3vw;
+            }
+
+            .hub-text {
                 font-size: 4vw;
             }
         }
@@ -108,7 +120,8 @@
 
 <body>
     <nav id="list">
-        <img src="BoilerHousingHub.png" alt="Logo" class="logo" />
+        <img src="Boiler.png" alt="Purdue Housing Hub Logo" class="logo" />
+        <span class="hub-text">Boiler Housing Hub</span>
         <div class="nav-items">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>

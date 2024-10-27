@@ -291,10 +291,10 @@
                     <h1 class="header">3. Gender Inclusive</h1>
                     <p class="text">Do you wish to be in a gender-inclusive dorm?</p>
 
-                    <input class="radio" type="radio" id="Q3-1" name="Q3" value="1" />
+                    <input class="radio" type="radio" id="Q3-1" name="Q3" value="Yes" />
                     <label class="options" for="Q3-1">Yes</label>
 
-                    <input class="radio" type="radio" id="Q3-2" name="Q3" value="2" />
+                    <input class="radio" type="radio" id="Q3-2" name="Q3" value="No" />
                     <label class="options" for="Q3-2">No</label>
 
                     <hr class="divider" />
@@ -304,10 +304,10 @@
                     <h1 class="header">4. All Male/Female</h1>
                     <p class="text">Would you prefer a dorm that is exclusively male or female?</p>
 
-                    <input class="radio" type="radio" id="Q4-1" name="Q4" value="1" />
+                    <input class="radio" type="radio" id="Q4-1" name="Q4" value="Yes" />
                     <label class="options" for="Q4-1">Yes</label>
 
-                    <input class="radio" type="radio" id="Q4-2" name="Q4" value="2" />
+                    <input class="radio" type="radio" id="Q4-2" name="Q4" value="No" />
                     <label class="options" for="Q4-2">No</label>
 
                     <hr class="divider" />
@@ -392,7 +392,18 @@
             	let v4 = document.getElementById('ValueRank4').value;
             	let v5 = document.getElementById('ValueRank5').value;
             	let v6 = document.getElementById('ValueRank6').value;
-                
+          		let Q21 = document.getElementById('Q2-1').checked;
+          		let Q22 = document.getElementById('Q2-2').checked;
+          		let Q23 = document.getElementById('Q2-3').checked;
+          		let Q31 = document.getElementById('Q3-1').checked;
+          		let Q32 = document.getElementById('Q3-2').checked;
+          		let Q41 = document.getElementById('Q4-1').checked;
+          		let Q42 = document.getElementById('Q4-2').checked;
+          		let Q51 = document.getElementById('Q5-1').checked;
+          		let Q52 = document.getElementById('Q5-2').checked;
+          		let Q53 = document.getElementById('Q5-3').checked;
+          		let Q54 = document.getElementById('Q5-4').checked;
+          		let Q55 = document.getElementById('Q5-5').checked;
             	let r1 = document.getElementById('RoomRank1').value;
             	let r2 = document.getElementById('RoomRank2').value;
             	let r3 = document.getElementById('RoomRank3').value;
@@ -401,9 +412,21 @@
                 if (v1 == 0 || v2 == 0 || v3 == 0 || v4 == 0 || v5 == 0 || v6 == 0) {
                		bool = false;
                 	alert("Question 1 must be filled out.");
+                } else if (!(Q21 === true || Q22 === true  || Q23 === true)) {
+                	bool = false;
+                	alert("Question 2 must be filled out.");
+                } else if (!(Q31 === true || Q32 === true)) {
+                	bool = false;
+                	alert("Question 3 must be filled out.");
+                } else if (!(Q41 === true || Q42 === true)) {
+                	bool = false;
+                	alert("Question 4 must be filled out.");
+                } else if (!(Q51 === true || Q52 === true || Q53 === true || Q54 === true || Q55 === true)) {
+                	bool = false;
+                	alert("Question 5 must be filled out.");
                 } else if (r1 == 0 || r2 == 0 || r3 == 0 || r4 == 0) {
                		bool = false;
-                	alert("Question 1 must be filled out.");
+                	alert("Question 6 must be filled out.");
                 }
                 if (bool) {
                 alert("yippee");

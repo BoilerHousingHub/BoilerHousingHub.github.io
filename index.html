@@ -119,7 +119,7 @@
 
         .slider {
             display: flex;
-            cursor: grab;
+            cursor: pointer;
             user-select: none;
             overflow-x: auto;
             scroll-behavior: smooth;
@@ -139,7 +139,6 @@
             color: white;
             border-radius: 10px;
             margin: 5px;
-            text-align: center;
             cursor: pointer;
             transition: background-color 0.3s;
             background-size: cover;
@@ -149,8 +148,8 @@
 
         .text-box {
             position: absolute;
-            bottom: -100px;
-            left: 3vw;
+            bottom: -70px;
+            left: 50%;
             transform: translateX(-50%);
             z-index: 2;
             padding: 5px 10px;
@@ -159,6 +158,14 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
             transition: bottom 0.3s ease, opacity 0.3s ease;
             opacity: 0;
+            text-align: center;
+        }
+
+        .hall img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
         }
 
         .hall span {
@@ -188,6 +195,22 @@
         .hall:hover .text-box {
             bottom: 70px;
             opacity: 1;
+        }
+
+        .hall-info {
+            text-align: left;
+            margin: 20px 0;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .hall-data {
+            background-color: RGB(207, 185, 145);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            margin: 20px auto;
         }
 
         @media (min-width: 981px) {
@@ -268,7 +291,7 @@
                             <span class="text-box">First Street Towers</span>
                         </div>
                         <div class="hall" onclick="scrollToSection('frieda')"
-                            style="background-image: url('images/Freida Parker.png');">
+                            style="background-image: url('images/Frieda Parker.png');">
                             <span class="text-box">Frieda Parker</span>
                         </div>
                         <div class="hall" onclick="scrollToSection('harrison')"
@@ -343,235 +366,245 @@
                 </div>
             </div>
         </div>
+        <div class="hall-info">
+            <div class="hall-data">
+                <h2 id="cary">Cary Quadrangle</h2>
+                <p style="white-space: pre-line;">Room Types:
+                    - Single
+                    - Double
+                    - Triple
+                    - Quad
 
-        <h2 id="cary">Cary Quadrangle</h2>
-        <p style="white-space: pre-line;">Room Types:
-            - Single
-            - Double
-            - Triple
-            - Quad
+                    Date Opened:
+                    1928
 
-            Date Opened:
-            1928
+                    *All Male
+                </p>
 
-            *All Male
-        </p>
+                <h2 id="earhart">Earhart Hall</h2>
+                <p style="white-space: pre-line;">Room Types:
+                    - Double
+                    - Triple
 
-        <h2 id="earhart">Earhart Hall</h2>
-        <p style="white-space: pre-line;">Room Types:
-            - Double
-            - Triple
+                    Date Opened:
+                    1964
 
-            Date Opened:
-            1964
+                    *Includes Dining Court
+                </p>
 
-            *Includes Dining Court
-        </p>
+                <h2 id="firstStreet">First Street Towers</h2>
+                <p style="white-space: pre-line;">Room Types:
+                    - Single
+                    - Double
 
-        <h2 id="firstStreet">First Street Towers</h2>
-        <p style="white-space: pre-line;">Room Types:
-            - Single
-            - Double
+                    Date Opened:
+                    2009</p>
 
-            Date Opened:
-            2009</p>
+                <h2 id="frieda">Frieda Parker</h2>
+                <p style="white-space: pre-line;">Room Types:
+                    - Double
+                    - Quad
 
-        <h2 id="frieda">Frieda Parker</h2>
-        <p style="white-space: pre-line;">Room Types:
-            - Double
-            - Quad
+                    Date Opened:
+                    2020</p>
 
-            Date Opened:
-            2020</p>
+                <h2 id="harrison">Harrison Hall</h2>
+                <p style="white-space: pre-line;">Room Types:
+                    - Double
+                    - Triple
+                    - Quad
 
-        <h2 id="harrison">Harrison Hall</h2>
-        <p style="white-space: pre-line;">Room Types:
-            - Double
-            - Triple
-            - Quad
+                    Date Opened:
+                    1966</p>
 
-            Date Opened:
-            1966</p>
+                <h2 id="hawkins">Hawkins Hall</h2>
+                <p style="white-space: pre-line;">Room Types:
+                    - Single
+                    - Double
+                    - Quad
 
-        <h2 id="hawkins">Hawkins Hall</h2>
-        <p style="white-space: pre-line;">Room Types:
-            - Single
-            - Double
-            - Quad
+                    Date Opened:
+                    1981
 
-            Date Opened:
-            1981
+                    *Gender-Inclusive
+                </p>
 
-            *Gender-Inclusive
-        </p>
+                <h2 id="hillenbrand">Hillenbrand Hall</h2>
+                <p style="white-space: pre-line;">Room Types:
+                    - Double
+                    - Triple
 
-        <h2 id="hillenbrand">Hillenbrand Hall</h2>
-        <p style="white-space: pre-line;">Room Types:
-            - Double
-            - Triple
+                    Date Opened:
+                    1993
 
-            Date Opened:
-            1993
+                    *Gender-Inclusive
+                    *Includes Dining Court
+                </p>
 
-            *Gender-Inclusive
-            *Includes Dining Court
-        </p>
+                <h2 id="honors">Honors College North</h2>
+                <p style="white-space: pre-line;">Room Types:
+                    - Single
+                    - Double
+                    - Triple
+                    - Quad
 
-        <h2 id="honors">Honors College North</h2>
-        <p style="white-space: pre-line;">Room Types:
-            - Single
-            - Double
-            - Triple
-            - Quad
+                    Date Opened:
+                    2016</p>
+                <h2 id="honorsSouth">Honors College South</h2>
+                <p style="white-space: pre-line;">Room Types:
+                    - Single
+                    - Double
+                    - Triple
+                    - Quad
 
-            Date Opened:
-            2016</p>
-        <h2 id="honorsSouth">Honors College South</h2>
-        <p style="white-space: pre-line;">Room Types:
-            - Single
-            - Double
-            - Triple
-            - Quad
+                    Date Opened:
+                    2016
 
-            Date Opened:
-            2016
+                    *All Female
+                </p>
+                <h2 id="mccutcheon">McCutcheon Hall</h2>
+                <p style="white-space: pre-line;">Room Types:
+                    - Double
+                    - Triple
+                    - Quad
 
-            *All Female
-        </p>
-        <h2 id="mccutcheon">McCutcheon Hall</h2>
-        <p style="white-space: pre-line;">Room Types:
-            - Double
-            - Triple
-            - Quad
+                    Date Opened:
+                    1963
 
-            Date Opened:
-            1963
+                    *All Male
+                </p>
+                <h2 id="meredith">Meredith Hall</h2>
+                <p style="white-space: pre-line;">Room Types:
+                    - Single
+                    - Double
+                    - Quad
 
-            *All Male
-        </p>
-        <h2 id="meredith">Meredith Hall</h2>
-        <p style="white-space: pre-line;">Room Types:
-            - Single
-            - Double
-            - Quad
+                    Date Opened:
+                    1952
 
-            Date Opened:
-            1952
+                    *All Female
+                </p>
+                <h2 id="meredithS">Meredith South</h2>
+                <p style="white-space: pre-line;">Room Types:
+                    - Single
+                    - Double
+                    - Triple
+                    - Quad
 
-            *All Female
-        </p>
-        <h2 id="meredithS">Meredith South</h2>
-        <p style="white-space: pre-line;">Room Types:
-            - Single
-            - Double
-            - Triple
-            - Quad
+                    Date Opened:
+                    2020
 
-            Date Opened:
-            2020
+                    *All Female
+                </p>
+                <h2 id="owen">Owen Hall</h2>
+                <p style="white-space: pre-line;">Room Types:
+                    - Single
+                    - Double
+                    - Triple
+                    - Quad
 
-            *All Female
-        </p>
-        <h2 id="owen">Owen Hall</h2>
-        <p style="white-space: pre-line;">Room Types:
-            - Single
-            - Double
-            - Triple
-            - Quad
+                    Date Opened:
+                    1957
+                </p>
+                <h2 id="shreve">Shreve Hall</h2>
+                <p style="white-space: pre-line;">Room Types:
+                    - Single
+                    - Double
+                    - Triple
 
-            Date Opened:
-            1957
-        </p>
-        <h2 id="shreve">Shreve Hall</h2>
-        <p style="white-space: pre-line;">Room Types:
-            - Single
-            - Double
-            - Triple
+                    Date Opened:
+                    1970
+                </p>
+                <h2 id="tarkington">Tarkington Hall</h2>
+                <p style="white-space: pre-line;">Room Types:
+                    - Double
+                    - Triple
+                    - Quad
 
-            Date Opened:
-            1970
-        </p>
-        <h2 id="tarkington">Tarkington Hall</h2>
-        <p style="white-space: pre-line;">Room Types:
-            - Double
-            - Triple
-            - Quad
+                    Date Opened:
+                    1958
 
-            Date Opened:
-            1958
+                    *All Male
+                </p>
+                <h2 id="wiley">Wiley Hall</h2>
+                <p style="white-space: pre-line;">Room Types:
+                    - Single
+                    - Double
+                    - Triple
+                    - Quad
 
-            *All Male
-        </p>
-        <h2 id="wiley">Wiley Hall</h2>
-        <p style="white-space: pre-line;">Room Types:
-            - Single
-            - Double
-            - Triple
-            - Quad
+                    Date Opened:
+                    1958
 
-            Date Opened:
-            1958
+                    *Includes Dining Court
+                </p>
+                <h2 id="windsor">Windsor Hall</h2>
+                <p style="white-space: pre-line;">Room Types:
+                    - Single
+                    - Double
+                    - Triple
 
-            *Includes Dining Court
-        </p>
-        <h2 id="windsor">Windsor Hall</h2>
-        <p style="white-space: pre-line;">Room Types:
-            - Single
-            - Double
-            - Triple
+                    Date Opened:
+                    1951
 
-            Date Opened:
-            1951
+                    *All Female
+                    *Includes Dining Court
+                </p>
+                <h2 id="winifred">Winifred Parker</h2>
+                <p style="white-space: pre-line;">Room Types:
+                    - Double
+                    - Triple
 
-            *All Female
-            *Includes Dining Court
-        </p>
-        <h2 id="winifred">Winifred Parker</h2>
-        <p style="white-space: pre-line;">Room Types:
-            - Double
-            - Triple
+                    Date Opened:
+                    2015
+                </p>
+                <h2 id="aspire">Aspire Apartments</h2>
+                <p style="white-space: pre-line;">Room Types:
+                    - Single
+                    - Double
 
-            Date Opened:
-            2015
-        </p>
-        <h2 id="aspire">Aspire Apartments</h2>
-        <p style="white-space: pre-line;">Room Types:
-            - Single
-            - Double
+                    Date Opened:
+                    2019
+                </p>
+                </p>
+                <h2 id="hilltop">Hilltop Apartments</h2>
+                <p style="white-space: pre-line;">Room Types:
+                    - Double
+                    - Triple
 
-            Date Opened:
-            2019
-        </p>
-        </p>
-        <h2 id="hilltop">Hilltop Apartments</h2>
-        <p style="white-space: pre-line;">Room Types:
-            - Double
-            - Triple
+                    Date Opened:
+                    1948
 
-            Date Opened:
-            1948
+                    *Gender-Inclusive
+                </p>
+                <h2 id="provenance">Provenance Apartments</h2>
+                <p style="white-space: pre-line;">Room Types:
+                    - Single
+                    - Double
 
-            *Gender-Inclusive
-        </p>
-        <h2 id="provenance">Provenance Apartments</h2>
-        <p style="white-space: pre-line;">Room Types:
-            - Single
-            - Double
-
-            Date Opened:
-            2021
-        </p>
+                    Date Opened:
+                    2021
+                </p>
+            </div>
+        </div>
     </div>
 
     <script>
-        function scrollToSection(id) {
-            const section = document.getElementById(id);
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            const offset = 85;
+
             if (section) {
-                section.scrollIntoView({
+                const elementPosition = section.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
                     behavior: 'smooth'
                 });
             }
         }
+
     </script>
 
 </body>

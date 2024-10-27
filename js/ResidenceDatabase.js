@@ -52,7 +52,7 @@ let dataArray = [meredith, meredithSouth, windsor, honorsSouth, caryQuadrangle, 
 
 
 // Gender Question
-let genderQuestion = '';
+let genderQuestion = 'Q2';
 let userSelectedSex;
 // Responces: Male/Female/Other
 
@@ -68,7 +68,7 @@ function getUserSex () {
 
 
 // Gender Inclusive housing question
-let genderInclusiveQuestion = '';
+let genderInclusiveQuestion = 'Q3';
 let userGenderInclusive;
 // Responces: Yes/No
 
@@ -83,7 +83,7 @@ function genderInclusive () {
 }
 
 // Gendered Dorm question
-let genderedDormQuestion = '';
+let genderedDormQuestion = 'Q4';
 let userGenderedDorm;
 // Responces: Yes/No
 
@@ -98,7 +98,7 @@ function genderedDorm() {
 }
 
 // Bathroom question
-let bathroomQuestion = '';
+let bathroomQuestion = 'Q5';
 let userBathroom;
 // Responces: 1, 2, 3, 4, 5
 
@@ -171,3 +171,72 @@ function PowerRanking () {
     }
 }
 
+
+/// The logic
+
+/// Calculate poweranking
+
+let noMaleArray;
+let noFemaleArray;
+let noMaleOrFemaleArray;
+let makeCompleteArray;
+
+
+function calculatePowerRanking (residence) {
+    // Output variabe
+    let powerRank = 0;
+    // Adding the values
+    powerRank = powerRank + residence.acPercentage * importanceArray[0]; // Adds weighted AC
+    // Making the bathroom weightage
+    userBathroom = 100 - Math.abs(userBathroom-residence.privBathroomPercentage);
+    powerRank = powerRank + userBathroom*importanceArray[1]; // Adds weighted bathroom
+    // Making the roommate weightage
+    expRes = (1 - (Math.abs(expRes-residence.expResidents) / (expRes))) * 100;
+    powerRank = powerRank + expRes * importanceArray[2]; // Adds weighted roommates amount
+    // Making the cost importance 
+    powerRank = powerRank + residence.avgCost * importanceArray[3]; // Adds weighted cost amount
+    // Making the distance importance
+    powerRank = powerRank + residence.distance * importanceArray[4]; // Adds weighted distance amount
+    // Making the food importance
+    powerRank = powerRank + residence.foodRating * importanceArray[5]; // Addds weighted food amount
+    
+    // Checking for Gender inclusive housing
+    if (userGenderInclusive === "Yes" && (residence.name === "Hawkins" || residence.name === "Hillenbrand" || residence.name === "Hilltop")) {
+        powerRank = powerRank + 10;
+    }
+    // Checking for gendered housing
+    if (userGenderedDorm === "Yes" && userSelectedSex === "Male" && residence.allMale) {
+        powerRank = powerRank + 10;
+    } else if (userGenderedDorm === "Yes" && userSelectedSex === "Female" && residence.allFemale) {
+        powerRank = powerRank + 10;
+    }
+    if (powerRank > 100.0) {
+        powerRank = 100.0;
+    }
+    return powerRank;
+}
+
+// Making our final data array
+let finalArray;
+function makeArray() {
+    let tempArray;
+    for (i = 0; i < dataArray.length; i ++) {
+        if (userSelectedSex === "Male") {
+            if (!dataArray[i].allFemale) {
+                tempArray.push([dataArray[i], calculatePowerRanking(dataArray[i])]);
+            }
+        } else if (userSelectedSex === "Female") {
+            if (!dataArray[i].allMale) {
+                tempArray.push([dataArray[i], calculatePowerRanking(dataArray[i])]);
+            }
+        } else if (userSelectedSex === "Other") {
+            if (!dataArray[i].allMale && !dataArray[i].allFemale) {
+                tempArray.push([dataArray[i], calculatePowerRanking(dataArray[i])]);
+            }
+        }
+    }
+    finalArray = (tempArray.sort((a,b) => b[1] - a[1]));
+    for (let i = 0; i < finalArray.length; i ++ ) {
+        console.log(finalArray[i][0].name + finalArray[i][1]);
+    }
+}

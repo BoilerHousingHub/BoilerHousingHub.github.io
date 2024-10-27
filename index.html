@@ -49,21 +49,18 @@
         }
 
         .button {
-            min-width: 100px;
-            max-width: 115px;
-            width: auto;
+            width: 15%;
             background-color: RGB(207, 185, 145);
             color: white;
             border: none;
-            padding: 10px 20px;
-            font-size: min(4vw, 24px);
+            padding: 15px;
+            font-size: 20px;
             cursor: pointer;
             text-decoration: none;
             border-radius: 20px;
             margin: 2% auto;
             display: block;
             transition: background-color 0.3s;
-            font-family: "United Sans", sans-serif;
         }
 
         .button:hover {
@@ -115,16 +112,15 @@
             overflow: hidden;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            font-family: "United Sans", sans-serif;
         }
 
         .slider {
             display: flex;
-            cursor: grab;
-            user-select: none;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            padding: 10px;
+            cursor: grab; /* Change cursor to indicate draggable */
+            user-select: none; /* Prevent text selection */
+            overflow-x: auto; /* Allow horizontal scrolling */
+            scroll-behavior: smooth; /* Smooth scrolling */
+            padding: 10px; /* Padding for aesthetics */
         }
 
         .hall {
@@ -143,28 +139,13 @@
             background-color: rgb(0, 0, 0);
         }
 
-        .nav-title {
-            font-weight: bold;
-            color: RGB(207, 185, 145);
-            margin-left: 5%;
-            font-family: "United Sans", sans-serif;
-        }
-
         @media (min-width: 981px) {
             .nav-items a {
                 font-size: 16px;
             }
-
-            .nav-title {
-                font-size: 25px;
-            }
         }
 
         @media (max-width: 980px) {
-            .button {
-                font-size: 3vw;
-                min-width: 120px;
-            }
             body {
                 background-color: white;
             }
@@ -173,15 +154,11 @@
                 width: 100vw;
             }
 
-            #button {
-                font-family: "United Sans", sans-serif;
+            #content {
+                font-size: min(8vw);
             }
 
             .nav-items a {
-                font-size: 4vw;
-            }
-
-            .nav-title {
                 font-size: 4vw;
             }
         }
@@ -191,7 +168,7 @@
 <body>
     <nav id="list">
         <img src="BoilerHousingHub.png" alt="Logo" class="logo" />
-        <span class="nav-title">Boiler Housing Hub</span>
+        <span style="font-weight: bold; color: RGB(207, 185, 145); margin-left: 5%;">Boiler Housing Hub</span>
         <div class="nav-items">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -208,43 +185,252 @@
             <a href="about.html" class="button">About!</a>
             <p class="text">To learn about the residence halls click any of the links below!</p>
 
+            <!-- Slider Container -->
             <div class="slider-container">
                 <div class="slider" id="slider">
+                    <div class="hall" onclick="scrollToSection('cary')">Cary</div>
                     <div class="hall" onclick="scrollToSection('earhart')">Earhart</div>
-                    <div class="hall" onclick="scrollToSection('tarkington')">Tarkington</div>
+                    <div class="hall" onclick="scrollToSection('firstStreet')">FirstStreet</div>
+                    <div class="hall" onclick="scrollToSection('frieda')">Frieda</div>
                     <div class="hall" onclick="scrollToSection('harrison')">Harrison</div>
+                    <div class="hall" onclick="scrollToSection('hawkins')">Hawkins</div>
                     <div class="hall" onclick="scrollToSection('hillenbrand')">Hillenbrand</div>
-                    <div class="hall" onclick="scrollToSection('meridith')">Meridith</div>
-                    <div class="hall" onclick="scrollToSection('carry')">Carry</div>
-                    <div class="hall" onclick="scrollToSection('wiley')">Wiley</div>
+                    <div class="hall" onclick="scrollToSection('honors')">Honors</div>
+                    <div class="hall" onclick="scrollToSection('honorsSouth')">HonorsSouth</div>
                     <div class="hall" onclick="scrollToSection('mccutcheon')">Mccutcheon</div>
+                    <div class="hall" onclick="scrollToSection('meredith')">Meredith</div>
+                    <div class="hall" onclick="scrollToSection('meredithS')">MeredithS</div>
+                    <div class="hall" onclick="scrollToSection('owen')">Owen</div>
+                    <div class="hall" onclick="scrollToSection('shreve')">Shreve</div>
+                    <div class="hall" onclick="scrollToSection('tarkington')">Tarkington</div>
+                    <div class="hall" onclick="scrollToSection('wiley')">Wiley</div>
+                    <div class="hall" onclick="scrollToSection('windsor')">Windsor</div>
+                    <div class="hall" onclick="scrollToSection('winifred')">Winifred</div>
+                    <div class="hall" onclick="scrollToSection('aspire')">Aspire</div>
+                    <div class="hall" onclick="scrollToSection('hilltop')">Hilltop</div>
+                    <div class="hall" onclick="scrollToSection('provenance')">Provenance</div>
+                    
                 </div>
             </div>
         </div>
 
-        <h2 id="earhart">Earhart Hall</h2>
-        <p>Information about Earhart Hall.</p>
+        <h2 id="cary">Cary Quadrangle</h2>
+        <p style="white-space: pre-line;">Room Types:
+             - Single
+             - Double
+             - Triple
+             - Quad
 
-        <h2 id="tarkington">Tarkington Hall</h2>
-        <p>Information about Tarkington Hall.</p>
+            Date Opened:
+            1928
+
+            *All Male
+        </p>
+
+        <h2 id="earhart">Earhart Hall</h2>
+        <p style="white-space: pre-line;">Room Types:
+            - Double
+            - Triple
+
+           Date Opened:
+           1964
+
+           *Includes Dining Court
+        </p>
+
+        <h2 id="firstStreet">First Street Towers</h2>
+        <p style="white-space: pre-line;">Room Types:
+            - Single
+            - Double
+
+           Date Opened:
+           2009</p>
+
+        <h2 id="frieda">Frieda Parker</h2>
+        <p style="white-space: pre-line;">Room Types:
+            - Double
+            - Quad
+
+           Date Opened:
+           2020</p>
 
         <h2 id="harrison">Harrison Hall</h2>
-        <p>Information about Harrison Hall.</p>
+        <p style="white-space: pre-line;">Room Types:
+            - Double
+            - Triple
+            - Quad
+
+           Date Opened:
+           1966</p>
+
+        <h2 id="hawkins">Hawkins Hall</h2>
+        <p style="white-space: pre-line;">Room Types:
+            - Single
+            - Double
+            - Quad
+
+           Date Opened:
+           1981
+        
+           *Gender-Inclusive
+        </p>
 
         <h2 id="hillenbrand">Hillenbrand Hall</h2>
-        <p>Information about Hillenbrand Hall.</p>
+        <p style="white-space: pre-line;">Room Types:
+            - Double
+            - Triple
 
-        <h2 id="meridith">Meridith Hall</h2>
-        <p>Information about Meridith Hall.</p>
+           Date Opened:
+           1993
+        
+           *Gender-Inclusive
+           *Includes Dining Court
+        </p>
 
-        <h2 id="carry">Carry Hall</h2>
-        <p>Information about Carry Hall.</p>
+        <h2 id="honors">Honors College North</h2>
+        <p style="white-space: pre-line;">Room Types:
+            - Single
+            - Double
+            - Triple
+            - Quad
 
+           Date Opened:
+           2016</p>
+        <h2 id="honorsSouth">Honors College South</h2>
+        <p style="white-space: pre-line;">Room Types:
+            - Single
+            - Double
+            - Triple
+            - Quad
+
+           Date Opened:
+           2016
+        
+           *All Female
+        </p>
+        <h2 id="mccutcheon">McCutcheon Hall</h2>
+        <p style="white-space: pre-line;">Room Types:
+            - Double
+            - Triple
+            - Quad
+
+           Date Opened:
+           1963
+        
+           *All Male
+        </p>
+        <h2 id="meredith">Meredith Hall</h2>
+        <p style="white-space: pre-line;">Room Types:
+            - Single
+            - Double
+            - Quad
+
+           Date Opened:
+           1952
+        
+           *All Female
+        </p>
+        <h2 id="meredithS">Meredith South</h2>
+        <p style="white-space: pre-line;">Room Types:
+            - Single
+            - Double
+            - Triple
+            - Quad
+
+           Date Opened:
+           2020
+        
+           *All Female
+        </p>
+        <h2 id="owen">Owen Hall</h2>
+        <p style="white-space: pre-line;">Room Types:
+            - Single
+            - Double
+            - Triple
+            - Quad
+
+           Date Opened:
+           1957
+        </p>
+        <h2 id="shreve">Shreve Hall</h2>
+        <p style="white-space: pre-line;">Room Types:
+            - Single
+            - Double
+            - Triple
+
+           Date Opened:
+           1970
+        </p>
+        <h2 id="tarkington">Tarkington Hall</h2>
+        <p style="white-space: pre-line;">Room Types:
+            - Double
+            - Triple
+            - Quad
+
+           Date Opened:
+           1958
+
+           *All Male
+        </p>
         <h2 id="wiley">Wiley Hall</h2>
-        <p>Information about Wiley Hall.</p>
+        <p style="white-space: pre-line;">Room Types:
+            - Single
+            - Double
+            - Triple
+            - Quad
 
-        <h2 id="mccutcheon">Mccutcheon Hall</h2>
-        <p>Information about Mccutcheon Hall.</p>
+           Date Opened:
+           1958
+
+           *Includes Dining Court
+        </p>
+        <h2 id="windsor">Windsor Hall</h2>
+        <p style="white-space: pre-line;">Room Types:
+            - Single
+            - Double
+            - Triple
+
+           Date Opened:
+           1951
+
+           *All Female
+           *Includes Dining Court
+        </p>
+        <h2 id="winifred">Winifred Parker</h2>
+        <p style="white-space: pre-line;">Room Types:
+            - Double
+            - Triple
+
+           Date Opened:
+           2015
+        </p>
+        <h2 id="aspire">Aspire Apartments</h2>
+        <p style="white-space: pre-line;">Room Types:
+            - Single
+            - Double
+
+           Date Opened:
+           2019
+        </p>
+    </p>
+    <h2 id="hilltop">Hilltop Apartments</h2>
+    <p style="white-space: pre-line;">Room Types:
+        - Double
+        - Triple
+
+       Date Opened:
+       1948
+
+       *Gender-Inclusive
+    </p>
+    <h2 id="provenance">Provenance Apartments</h2>
+    <p style="white-space: pre-line;">Room Types:
+        - Single
+        - Double
+
+       Date Opened:
+       2021
+    </p>
     </div>
 
     <script>

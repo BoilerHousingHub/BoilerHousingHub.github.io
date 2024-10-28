@@ -45,7 +45,6 @@ Our Vision – Due to this problem at hand, our goal was to make this process of
 **User Preferences** – After defining the variables used within our model, we looked to use user input to link the preference of the user to how our model would be used. After giving our user the ability to rank their preferences in order from 1 to 6, we converted their ranking to a constant multiplier in our dataset via a tiered weighting system. This ensured that the user’s preferences were considered the most during our calculations for each housing option and their compatibility with the user.
 
 **Algorithm Calibration** – After collecting the weightage multipliers to be used via our user’s preferences, we needed to find how similar each housing option was from what our user was looking for. By utilizing our expected values and our value indexes for each category, we took the percent error between residence halls and user input. Taking the inverse of these numbers (e.g. 4 converted to 96) we derived a score from 0-100 of the compatibility of each resident hall to the user with each individual variable. From there, we utilized the weightage system to calibrate our overall compatibility scores, providing a comprehensive list of the best residence halls for the user.
-Future Development:
 
 ---
 
